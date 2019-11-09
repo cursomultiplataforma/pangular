@@ -1,3 +1,17 @@
-<p>layout works!</p>
-
-<router-outlet></router-outlet>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav mode="side" #sidenav position="start">
+    MENÚ
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      Curso multiplataforma
+    </mat-toolbar>
+    <div class="main-content">
+      <p>Contenido</p>
+    </div>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
