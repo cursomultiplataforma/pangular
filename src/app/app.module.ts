@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { OneComponent } from './secciones/one/one.component';
+import { TwoComponent } from './secciones/two/two.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent
+    LayoutComponent,
+    OneComponent,
+    TwoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,17 @@
 <mat-sidenav-container fullscreen>
   <mat-sidenav mode="side" #sidenav position="start">
     MENÚ
+    <ul>
+      <li>
+        <a routerLink=''>Inicio</a>
+      </li>
+      <li>
+        <a routerLink='one'>Ejercicio 1</a>
+      </li>
+      <li>
+        <a routerLink='two'>Ejercicio 2</a>
+      </li>
+    </ul>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -10,8 +21,7 @@
       Curso multiplataforma
     </mat-toolbar>
     <div class="main-content">
-      <p>Contenido</p>
+      <router-outlet></router-outlet>
     </div>
-    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
