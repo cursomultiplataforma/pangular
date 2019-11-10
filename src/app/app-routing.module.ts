@@ -6,6 +6,8 @@ import {DirectivaifComponent} from './secciones/directivaif/directivaif.componen
 import {DirectivaforComponent} from './secciones/directivafor/directivafor.component';
 import {DirectivaswitchComponent} from './secciones/directivaswitch/directivaswitch.component';
 import {DirectivamodelComponent} from './secciones/directivamodel/directivamodel.component';
+import {PadreComponent} from './secciones/comunicacion/padre/padre.component';
+import {HijoComponent} from './secciones/comunicacion/hijo/hijo.component';
 
 const routes: Routes = [
   {path: 'one', pathMatch: 'full', component: OneComponent},
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path: 'for', pathMatch: 'full', component: DirectivaforComponent},
   {path: 'switch', pathMatch: 'full', component: DirectivaswitchComponent},
   {path: 'model', pathMatch: 'full', component: DirectivamodelComponent},
+  {path: 'padre', pathMatch: 'full', component: PadreComponent},
+  {path: 'hijo', pathMatch: 'full', component: HijoComponent},
 ];
 
 @NgModule({
