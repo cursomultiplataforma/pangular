@@ -1,0 +1,11 @@
+<p>Ejercicio directivas</p>
+
+<div *ngIf="mostrar">
+  Div A, este div está oculta por la directiva, valor de la variable : {{mostrar}}
+</div>
+
+<div *ngIf="!mostrar">
+  Div B, este div se muestra por la directiva, valor de la variable : {{mostrar}}
+</div>
+
+<button (click)="cambiarEstado()">Mostrar ocultar div</button>

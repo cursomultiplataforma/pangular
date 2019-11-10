@@ -8,13 +8,15 @@ import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatTool
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { OneComponent } from './secciones/one/one.component';
 import { TwoComponent } from './secciones/two/two.component';
+import { DirectivaifComponent } from './secciones/directivaif/directivaif.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     OneComponent,
-    TwoComponent
+    TwoComponent,
+    DirectivaifComponent
   ],
   imports: [
     BrowserModule,
