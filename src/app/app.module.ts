@@ -9,6 +9,7 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
 import { OneComponent } from './secciones/one/one.component';
 import { TwoComponent } from './secciones/two/two.component';
 import { DirectivaifComponent } from './secciones/directivaif/directivaif.component';
+import { DirectivaforComponent } from './secciones/directivafor/directivafor.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DirectivaifComponent } from './secciones/directivaif/directivaif.compon
     LayoutComponent,
     OneComponent,
     TwoComponent,
-    DirectivaifComponent
+    DirectivaifComponent,
+    DirectivaforComponent
   ],
   imports: [
     BrowserModule,
