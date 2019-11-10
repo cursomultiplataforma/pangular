@@ -1,0 +1,16 @@
+<p>Directiva ng switch</p>
+
+<div [ngSwitch]="numero">
+  <p *ngSwitchCase="0">El valor es 0</p>
+  <p *ngSwitchCase="1">El valor es 1</p>
+  <p *ngSwitchCase="2">El valor es 2</p>
+  <p *ngSwitchDefault>No hay un valor establecido</p>
+</div>
+
+<hr>
+<div>
+  Inserte el nuevo valor
+  <label>
+    <input (change)="cambiarValor($event.target.value)">
+  </label>
+</div>

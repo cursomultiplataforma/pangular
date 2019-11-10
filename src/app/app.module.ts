@@ -10,6 +10,7 @@ import { OneComponent } from './secciones/one/one.component';
 import { TwoComponent } from './secciones/two/two.component';
 import { DirectivaifComponent } from './secciones/directivaif/directivaif.component';
 import { DirectivaforComponent } from './secciones/directivafor/directivafor.component';
+import { DirectivaswitchComponent } from './secciones/directivaswitch/directivaswitch.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DirectivaforComponent } from './secciones/directivafor/directivafor.com
     OneComponent,
     TwoComponent,
     DirectivaifComponent,
-    DirectivaforComponent
+    DirectivaforComponent,
+    DirectivaswitchComponent
   ],
   imports: [
     BrowserModule,
