@@ -15,6 +15,7 @@ import { DirectivamodelComponent } from './secciones/directivamodel/directivamod
 import {FormsModule} from '@angular/forms';
 import { PadreComponent } from './secciones/comunicacion/padre/padre.component';
 import { HijoComponent } from './secciones/comunicacion/hijo/hijo.component';
+import { ObserverComponent } from './secciones/observer/observer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HijoComponent } from './secciones/comunicacion/hijo/hijo.component';
     DirectivaswitchComponent,
     DirectivamodelComponent,
     PadreComponent,
-    HijoComponent
+    HijoComponent,
+    ObserverComponent
   ],
   imports: [
     BrowserModule,

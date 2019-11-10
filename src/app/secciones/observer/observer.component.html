@@ -1,0 +1,8 @@
+<p>Componente observable</p>
+
+<div>
+  <p>Mi número random inicial: <span [ngStyle]="{'color':'blue'}">{{minumero}}</span></p>
+  <p>Intentando adivinar el número: <span [ngStyle]="{'color':'green'}">{{numeroRandom}}</span></p>
+  <div [ngStyle]="{'color':'red'}" *ngIf ="adivinado">Encontrado !!</div>
+</div>
+

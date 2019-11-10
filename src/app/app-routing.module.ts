@@ -8,6 +8,7 @@ import {DirectivaswitchComponent} from './secciones/directivaswitch/directivaswi
 import {DirectivamodelComponent} from './secciones/directivamodel/directivamodel.component';
 import {PadreComponent} from './secciones/comunicacion/padre/padre.component';
 import {HijoComponent} from './secciones/comunicacion/hijo/hijo.component';
+import {ObserverComponent} from './secciones/observer/observer.component';
 
 const routes: Routes = [
   {path: 'one', pathMatch: 'full', component: OneComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'model', pathMatch: 'full', component: DirectivamodelComponent},
   {path: 'padre', pathMatch: 'full', component: PadreComponent},
   {path: 'hijo', pathMatch: 'full', component: HijoComponent},
+  {path: 'observer', pathMatch: 'full', component: ObserverComponent},
 ];
 
 @NgModule({
