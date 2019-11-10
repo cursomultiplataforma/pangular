@@ -11,6 +11,8 @@ import { TwoComponent } from './secciones/two/two.component';
 import { DirectivaifComponent } from './secciones/directivaif/directivaif.component';
 import { DirectivaforComponent } from './secciones/directivafor/directivafor.component';
 import { DirectivaswitchComponent } from './secciones/directivaswitch/directivaswitch.component';
+import { DirectivamodelComponent } from './secciones/directivamodel/directivamodel.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { DirectivaswitchComponent } from './secciones/directivaswitch/directivas
     TwoComponent,
     DirectivaifComponent,
     DirectivaforComponent,
-    DirectivaswitchComponent
+    DirectivaswitchComponent,
+    DirectivamodelComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { DirectivaswitchComponent } from './secciones/directivaswitch/directivas
     MatListModule,
     MatButtonModule,
     MatIconModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

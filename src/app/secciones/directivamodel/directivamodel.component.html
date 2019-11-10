@@ -1,0 +1,34 @@
+<p>Directiva ngmodel</p>
+
+<div>
+  <p>Propiedades del vehículo</p>
+  <ul>
+    <li>Tipo: {{vehiculo.tipo}}</li>
+    <li>Ruedas: {{vehiculo.ruedas}}</li>
+    <li>Coste: {{vehiculo.coste}}</li>
+  </ul>
+</div>
+
+<hr>
+<p>Ejemplo de ngModel y dataBinding</p>
+<hr>
+<div>
+  <p>
+    Coste del coche {{vehiculo.coste}}
+  </p>
+  <p>
+    1 way binding <label>
+      <input type="number" [ngModel]="vehiculo.coste">
+    </label>
+  </p>
+  <p>
+    2 way binding: <label>
+    <input type="number" [(ngModel)]="vehiculo.coste">
+  </label>
+  </p>
+  <p>
+    Evento cambiar valor del coste: <label>
+    <input type="number" [ngModel]="vehiculo.coste" (ngModelChange)="cambiarCoste($event)">
+  </label>
+  </p>
+</div>
