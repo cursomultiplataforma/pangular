@@ -9,7 +9,7 @@ import {Subject, Subscription} from 'rxjs';
 export class ObserverComponent implements OnInit, OnDestroy {
 
   private numeroMaximo = 10;
-  private adivinado = false;
+  adivinado = false;
   private organizator$: Subject<number> = new Subject();
   private suscription: Subscription;
 
