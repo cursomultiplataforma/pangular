@@ -9,8 +9,10 @@ import {DirectivamodelComponent} from './secciones/directivamodel/directivamodel
 import {PadreComponent} from './secciones/comunicacion/padre/padre.component';
 import {HijoComponent} from './secciones/comunicacion/hijo/hijo.component';
 import {ObserverComponent} from './secciones/observer/observer.component';
+import {ErrorComponent} from './secciones/error/error.component';
 
 const routes: Routes = [
+  {path: '', pathMatch: 'full', component: ErrorComponent},
   {path: 'one', pathMatch: 'full', component: OneComponent},
   {path: 'two', pathMatch: 'full', component: TwoComponent},
   {path: 'if', pathMatch: 'full', component: DirectivaifComponent},
@@ -20,6 +22,10 @@ const routes: Routes = [
   {path: 'padre', pathMatch: 'full', component: PadreComponent},
   {path: 'hijo', pathMatch: 'full', component: HijoComponent},
   {path: 'observer', pathMatch: 'full', component: ObserverComponent},
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
 
 @NgModule({

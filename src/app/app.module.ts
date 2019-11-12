@@ -16,6 +16,7 @@ import {FormsModule} from '@angular/forms';
 import { PadreComponent } from './secciones/comunicacion/padre/padre.component';
 import { HijoComponent } from './secciones/comunicacion/hijo/hijo.component';
 import { ObserverComponent } from './secciones/observer/observer.component';
+import { ErrorComponent } from './secciones/error/error.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ObserverComponent } from './secciones/observer/observer.component';
     DirectivamodelComponent,
     PadreComponent,
     HijoComponent,
-    ObserverComponent
+    ObserverComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
