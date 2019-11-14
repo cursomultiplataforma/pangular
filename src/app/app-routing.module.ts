@@ -12,8 +12,11 @@ import {ObserverComponent} from './secciones/observer/observer.component';
 import {ErrorComponent} from './secciones/error/error.component';
 import {Ej2Component} from './secciones/observer/ej2/ej2.component';
 import {Ej3Component} from './secciones/observer/ej3/ej3.component';
+import {PostsComponent} from './apicloud/posts/posts.component';
+import {CommentsComponent} from './apicloud/comments/comments.component';
 
 const routes: Routes = [
+  // EJERCICIOS
   {path: '', pathMatch: 'full', component: ErrorComponent},
   {path: 'one', pathMatch: 'full', component: OneComponent},
   {path: 'two', pathMatch: 'full', component: TwoComponent},
@@ -26,6 +29,9 @@ const routes: Routes = [
   {path: 'observer', pathMatch: 'full', component: ObserverComponent},
   {path: 'observer2', pathMatch: 'full', component: Ej2Component},
   {path: 'observer3', pathMatch: 'full', component: Ej3Component},
+  // API CLOUD
+  {path: 'posts', pathMatch: 'full', component: PostsComponent},
+  {path: 'comments', pathMatch: 'full', component: CommentsComponent},
   {
     path: '**',
     redirectTo: ''

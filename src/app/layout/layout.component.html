@@ -1,6 +1,6 @@
 <mat-sidenav-container fullscreen>
   <mat-sidenav mode="side" #sidenav position="start">
-    MENÚ
+    EJERCICIOS
     <hr>
     <ul>
       <li><a routerLink='' (click)="sidenav.close()">Inicio</a></li>
@@ -15,6 +15,13 @@
       <li><a routerLink='observer' (click)="sidenav.close()">Observer</a></li>
       <li><a routerLink='observer2' (click)="sidenav.close()">Observer2</a></li>
       <li><a routerLink='observer3' (click)="sidenav.close()">Observer3</a></li>
+    </ul>
+    <hr>
+    API CLOUD
+    <hr>
+    <ul>
+      <li><a routerLink='posts' (click)="sidenav.close()">Posts</a></li>
+      <li><a routerLink='comments' (click)="sidenav.close()">Comentarios</a></li>
     </ul>
   </mat-sidenav>
   <mat-sidenav-content>
