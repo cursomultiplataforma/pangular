@@ -17,6 +17,8 @@ import { PadreComponent } from './secciones/comunicacion/padre/padre.component';
 import { HijoComponent } from './secciones/comunicacion/hijo/hijo.component';
 import { ObserverComponent } from './secciones/observer/observer.component';
 import { ErrorComponent } from './secciones/error/error.component';
+import { Ej2Component } from './secciones/observer/ej2/ej2.component';
+import { Ej3Component } from './secciones/observer/ej3/ej3.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ErrorComponent } from './secciones/error/error.component';
     PadreComponent,
     HijoComponent,
     ObserverComponent,
-    ErrorComponent
+    ErrorComponent,
+    Ej2Component,
+    Ej3Component
   ],
   imports: [
     BrowserModule,

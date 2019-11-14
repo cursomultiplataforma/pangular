@@ -11,6 +11,7 @@ export class DirectivaforComponent implements OnInit {
   datosMixtos: any[];
   datosAsociativos;
   datosInit = 1;
+  datosRow: Array<{name: string, altura: number}> = [];
 
   constructor() {
     this.datosNumericos = [4, 2, 22 , 3];
@@ -19,6 +20,8 @@ export class DirectivaforComponent implements OnInit {
       {value: 7, tipo: 'Aa'},
       {value: 2, tipo: 'Bb'},
     ];
+    this.datosRow.push({name: 'Daniel', altura: 180});
+    this.datosRow.push({name: 'Superman', altura: 200});
   }
 
   ngOnInit() {

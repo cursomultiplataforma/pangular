@@ -1,0 +1,9 @@
+<div *ngIf="!completado">
+  Aún no se ha comenzado la suscripción.
+  <button (click)="suscribirse()">Suscribirse</button>
+</div>
+
+<div *ngIf="completado">
+  <p *ngFor="let valor of valores">{{valor}}</p>
+  <p>La suscripción terminó</p>
+</div>

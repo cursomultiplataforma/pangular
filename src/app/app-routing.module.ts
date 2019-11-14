@@ -10,6 +10,8 @@ import {PadreComponent} from './secciones/comunicacion/padre/padre.component';
 import {HijoComponent} from './secciones/comunicacion/hijo/hijo.component';
 import {ObserverComponent} from './secciones/observer/observer.component';
 import {ErrorComponent} from './secciones/error/error.component';
+import {Ej2Component} from './secciones/observer/ej2/ej2.component';
+import {Ej3Component} from './secciones/observer/ej3/ej3.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', component: ErrorComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path: 'padre', pathMatch: 'full', component: PadreComponent},
   {path: 'hijo', pathMatch: 'full', component: HijoComponent},
   {path: 'observer', pathMatch: 'full', component: ObserverComponent},
+  {path: 'observer2', pathMatch: 'full', component: Ej2Component},
+  {path: 'observer3', pathMatch: 'full', component: Ej3Component},
   {
     path: '**',
     redirectTo: ''

@@ -1,0 +1,16 @@
+<p>Componente observable</p>
+
+<p>Mi número random inicial: <span [ngStyle]="{'color':'blue'}">{{minumero}}</span></p>
+
+<div *ngIf="numerosRandom.length > 0">
+  Números generados aleatoriament:
+  <p *ngFor="let v of numerosRandom">{{v}}</p>
+</div>
+<div *ngIf="numerosRandom.length == 0">
+  No se han generado numeros aleatorios.
+</div>
+
+<div [ngStyle]="{'color':'red'}" *ngIf ="adivinado">Encontrado !!</div>
+
+<button (click)="cargarNumeros()">Generar número random</button>
+<button (click)="existe()">¿Encontrado?</button>

@@ -31,4 +31,10 @@
     <input type="number" [ngModel]="vehiculo.coste" (ngModelChange)="cambiarCoste($event)">
   </label>
   </p>
+
+  <p>
+    Sin evento 2 way binding cambiar valor del coste: <label>
+    <input type="number" [(ngModel)]="vehiculo.coste">
+  </label>
+  </p>
 </div>

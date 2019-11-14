@@ -30,9 +30,11 @@ export class ObserverComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.suscription = this.organizator$.asObservable().subscribe(
-      (elNumeroGeneradoRandom) => {this.notificarAlSuscriptor(this.minumero, elNumeroGeneradoRandom); }
+      (elNumeroGeneradoRandom) => {
+        this.notificarAlSuscriptor(this.minumero, elNumeroGeneradoRandom);
+      }
     );
-    setInterval(() => {this.generarNumeroRamdom(); }, 750);
+    setInterval(() => {this.generarNumeroRamdom(); }, 500);
   }
 
   generarNumeroRamdom() {
