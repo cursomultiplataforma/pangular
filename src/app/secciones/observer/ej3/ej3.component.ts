@@ -11,7 +11,7 @@ export class Ej3Component implements OnInit, OnDestroy {
   private numeroMaximo = 10;
   adivinado = false;
   private numerosSubjectObserbable$ = new BehaviorSubject([]);
-  private numerosRandom: Array<number> = [];
+  numerosRandom: Array<number> = [];
 
   minumero: number;
 
