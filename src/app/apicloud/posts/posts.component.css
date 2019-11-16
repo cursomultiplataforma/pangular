@@ -45,3 +45,20 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-element-description-attribution {
   opacity: 0.5;
 }
+
+/* form */
+.example-form {
+  min-width: 100px;
+  max-width: 150px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+  font-size: 12px;
+}
+
+/* Snackbar */
+.blue-snackbar {
+  background: #2196F3;
+}

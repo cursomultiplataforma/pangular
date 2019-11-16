@@ -26,6 +26,11 @@ import {ApicloudService} from './apicloud/services/apicloud.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {CustomSnackBarComponent} from './apicloud/templates/snackbarok/custom.snabkbar.ok.component';
 
 @NgModule({
   declarations: [
@@ -47,22 +52,30 @@ import {MatTableModule} from '@angular/material/table';
     // API CLOUD
     CommentsComponent,
     PostsComponent,
-    UsersComponent
+    UsersComponent,
+    CustomSnackBarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    MatDialogModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatSnackBarModule,
     MatButtonModule,
     MatIconModule,
     NoopAnimationsModule,
     FormsModule,
     HttpClientModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule
+  ],
+  entryComponents: [
+    CustomSnackBarComponent
   ],
   providers: [ApicloudService],
   bootstrap: [AppComponent]

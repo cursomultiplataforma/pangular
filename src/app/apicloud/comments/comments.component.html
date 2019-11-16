@@ -19,3 +19,7 @@
 
   <mat-paginator [length]="resultsLength" [pageSize]="10"></mat-paginator>
 </div>
+
+<ng-template #snackBarTemplate>
+  <app-custom-snack-bar [texto]="mensajeSnackBar"></app-custom-snack-bar>
+</ng-template>
