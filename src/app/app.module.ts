@@ -33,6 +33,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {CustomSnackBarComponent} from './apicloud/templates/snackbarok/custom.snabkbar.ok.component';
 import { Padre2Component } from './secciones/comunicacion/ej2/padre2/padre2.component';
 import { Hijo2Component } from './secciones/comunicacion/ej2/hijo2/hijo2.component';
+import { PipesComponent } from './secciones/pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { Hijo2Component } from './secciones/comunicacion/ej2/hijo2/hijo2.compone
     UsersComponent,
     CustomSnackBarComponent,
     Padre2Component,
-    Hijo2Component
+    Hijo2Component,
+    PipesComponent
   ],
   imports: [
     BrowserModule,

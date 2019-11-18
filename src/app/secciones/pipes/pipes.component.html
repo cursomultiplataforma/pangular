@@ -1,0 +1,17 @@
+<p>Ejemplos de pipes en angular</p>
+<hr>
+<p><b>Un número culquiera:</b> {{ numero }}</p>
+<p><b>El número con un decimal:</b> {{ numero | number:'1.0-1' }}</p>
+<hr>
+<p><b>Una cantidad de dinero:</b> {{ dinero | currency:'€':'symbol':'1.0-2'}}</p>
+<hr>
+<p><b>Una fecha:</b> {{ fecha | date}}</p>
+<p><b>Una fecha con máscara y en minúsculas:</b> {{ fecha | date | lowercase}}</p>
+<p><b>Una fecha con máscara:</b> {{ fecha | date:'d/M/y'}}</p>
+<hr>
+<p><b>Una cadena:</b> {{cadena}}</p>
+<p><b>Una cadena a minúsculas:</b> {{cadena | lowercase}}</p>
+<p><b>Una cadena a mayúsculas:</b> {{cadena | uppercase}}</p>
+<p><b>Una cadena convertida con la primera en mayúsculas:</b> {{cadena | titlecase}}</p>
+<hr>
+<p><b>Un objeto:</b> {{ objeto | json }}</p>
