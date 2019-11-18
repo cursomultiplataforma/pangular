@@ -12,7 +12,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class CommentsComponent implements OnInit, AfterViewInit {
   dataSource;
-  displayedColumns: string[] = ['id', 'body'];
+  displayedColumns: string[] = ['id', 'postId', 'body'];
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   resultsLength: number;
   // custom snack bar

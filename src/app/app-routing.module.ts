@@ -14,6 +14,8 @@ import {Ej2Component} from './secciones/observer/ej2/ej2.component';
 import {Ej3Component} from './secciones/observer/ej3/ej3.component';
 import {PostsComponent} from './apicloud/posts/posts.component';
 import {CommentsComponent} from './apicloud/comments/comments.component';
+import {Padre2Component} from './secciones/comunicacion/ej2/padre2/padre2.component';
+import {Hijo2Component} from './secciones/comunicacion/ej2/hijo2/hijo2.component';
 
 const routes: Routes = [
   // EJERCICIOS
@@ -26,6 +28,8 @@ const routes: Routes = [
   {path: 'model', pathMatch: 'full', component: DirectivamodelComponent},
   {path: 'padre', pathMatch: 'full', component: PadreComponent},
   {path: 'hijo', pathMatch: 'full', component: HijoComponent},
+  {path: 'padre2', pathMatch: 'full', component: Padre2Component},
+  {path: 'hijo2', pathMatch: 'full', component: Hijo2Component},
   {path: 'observer', pathMatch: 'full', component: ObserverComponent},
   {path: 'observer2', pathMatch: 'full', component: Ej2Component},
   {path: 'observer3', pathMatch: 'full', component: Ej3Component},

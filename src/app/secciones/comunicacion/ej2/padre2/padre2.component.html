@@ -1,0 +1,7 @@
+<app-hijo2 [mensajeAlHijoDePadreViaInput]="mensajePadreAlHijoViaInput"></app-hijo2>
+<hr>
+<p>Mensaje del hijo al padre via ViewChild: <span [ngStyle]="{color: 'red'}">{{mensajeAlPadreDeHijoViewChild}}</span></p>
+<hr>
+<app-hijo2 (mensajeAlPadreEvento)="recibirMensaje($event)">
+</app-hijo2>
+<p>El mensaje que se ha recibido es: <span [ngStyle]="{color: 'red'}">{{mensajeAlPadreDeHijoOutput}}</span></p>

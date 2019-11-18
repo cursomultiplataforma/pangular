@@ -3,38 +3,48 @@
 <div>
   <p>Dato inicializado: <span style="color:red">{{datosInit}}</span></p>
 </div>
-
 <hr>
-
 <div>
   <p>Div de datos numericos</p>
   <ul>
     <li *ngFor="let d of datosNumericos">{{d}}</li>
   </ul>
 </div>
-
 <hr>
-
 <div>
   <p>Div de datos mixtos</p>
   <ul>
     <li *ngFor="let d of datosMixtos">{{d}}</li>
   </ul>
 </div>
-
 <hr>
-
 <div>
   <p>Div de datos asociativos</p>
   <ul>
     <li *ngFor="let d of datosAsociativos">Valor: {{d.value}} -> tipo: {{d.tipo}}</li>
   </ul>
 </div>
-
-
+<hr>
 <div>
   <p>Div de datos array</p>
   <ul>
     <li *ngFor="let d of datosRow">Nombre: {{d.name}} -> altura: {{d.altura}}</li>
+  </ul>
+</div>
+<hr>
+<div>
+  <p>Div de tupla</p>
+  <ul>
+    <li>Tupla: {{tupla}}</li>
+    <li>Primera posición: {{tupla[0]}}</li>
+    <li>Segunda posición: {{tupla[1]}}</li>
+    <li>Tercera posición: {{tupla[2]}}</li>
+  </ul>
+</div>
+<hr>
+<div>
+  <p>Div de array de tuplas</p>
+  <ul>
+    <li *ngFor="let d of arrayTupla">Tupla: {{d}}</li>
   </ul>
 </div>
