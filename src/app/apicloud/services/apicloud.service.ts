@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Comment} from '../models/comment.model';
 import {Post} from '../models/post.model';
 
@@ -12,8 +12,6 @@ export class ApicloudService {
 
   private static crearHeaders() {
     const options: any = {
-      headers: new HttpHeaders(),
-      params: new HttpParams(),
       responseType: 'json',
       observe: 'response'
     };

@@ -12,7 +12,7 @@ import {DirectivaifComponent} from './secciones/directivaif/directivaif.componen
 import {DirectivaforComponent} from './secciones/directivafor/directivafor.component';
 import {DirectivaswitchComponent} from './secciones/directivaswitch/directivaswitch.component';
 import {DirectivamodelComponent} from './secciones/directivamodel/directivamodel.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PadreComponent} from './secciones/comunicacion/padre/padre.component';
 import {HijoComponent} from './secciones/comunicacion/hijo/hijo.component';
 import {ObserverComponent} from './secciones/observer/observer.component';
@@ -34,6 +34,8 @@ import {CustomSnackBarComponent} from './apicloud/templates/snackbarok/custom.sn
 import { Padre2Component } from './secciones/comunicacion/ej2/padre2/padre2.component';
 import { Hijo2Component } from './secciones/comunicacion/ej2/hijo2/hijo2.component';
 import { PipesComponent } from './secciones/pipes/pipes.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { AuthComponent } from './apicloud/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { PipesComponent } from './secciones/pipes/pipes.component';
     CustomSnackBarComponent,
     Padre2Component,
     Hijo2Component,
-    PipesComponent
+    PipesComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +81,9 @@ import { PipesComponent } from './secciones/pipes/pipes.component';
     MatPaginatorModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     CustomSnackBarComponent

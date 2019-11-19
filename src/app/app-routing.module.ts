@@ -17,6 +17,7 @@ import {CommentsComponent} from './apicloud/comments/comments.component';
 import {Padre2Component} from './secciones/comunicacion/ej2/padre2/padre2.component';
 import {Hijo2Component} from './secciones/comunicacion/ej2/hijo2/hijo2.component';
 import {PipesComponent} from './secciones/pipes/pipes.component';
+import {AuthComponent} from './apicloud/auth/auth.component';
 
 const routes: Routes = [
   // EJERCICIOS
@@ -38,6 +39,7 @@ const routes: Routes = [
   // API CLOUD
   {path: 'posts', pathMatch: 'full', component: PostsComponent},
   {path: 'comments', pathMatch: 'full', component: CommentsComponent},
+  {path: 'login', pathMatch: 'full', component: AuthComponent},
   {
     path: '**',
     redirectTo: ''
