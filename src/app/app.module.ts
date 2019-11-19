@@ -34,6 +34,9 @@ import {CustomSnackBarComponent} from './apicloud/templates/snackbarok/custom.sn
 import { Padre2Component } from './secciones/comunicacion/ej2/padre2/padre2.component';
 import { Hijo2Component } from './secciones/comunicacion/ej2/hijo2/hijo2.component';
 import { PipesComponent } from './secciones/pipes/pipes.component';
+import { CrearUsuarioComponent } from './apizend/crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './apizend/editar-usuario/editar-usuario.component';
+import { EliminarUsuarioComponent } from './apizend/eliminar-usuario/eliminar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,10 @@ import { PipesComponent } from './secciones/pipes/pipes.component';
     CustomSnackBarComponent,
     Padre2Component,
     Hijo2Component,
-    PipesComponent
+    PipesComponent,
+    CrearUsuarioComponent,
+    EditarUsuarioComponent,
+    EliminarUsuarioComponent
   ],
   imports: [
     BrowserModule,

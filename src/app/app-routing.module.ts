@@ -17,6 +17,9 @@ import {CommentsComponent} from './apicloud/comments/comments.component';
 import {Padre2Component} from './secciones/comunicacion/ej2/padre2/padre2.component';
 import {Hijo2Component} from './secciones/comunicacion/ej2/hijo2/hijo2.component';
 import {PipesComponent} from './secciones/pipes/pipes.component';
+import {CrearUsuarioComponent} from "./apizend/crear-usuario/crear-usuario.component";
+import {EditarUsuarioComponent} from "./apizend/editar-usuario/editar-usuario.component";
+import {EliminarUsuarioComponent} from "./apizend/eliminar-usuario/eliminar-usuario.component";
 
 const routes: Routes = [
   // EJERCICIOS
@@ -38,6 +41,10 @@ const routes: Routes = [
   // API CLOUD
   {path: 'posts', pathMatch: 'full', component: PostsComponent},
   {path: 'comments', pathMatch: 'full', component: CommentsComponent},
+  // API ZEND
+  {path: 'crear-usuario', pathMatch: 'full', component: CrearUsuarioComponent},
+  {path: 'editar-usuario', pathMatch: 'full', component: EditarUsuarioComponent},
+  {path: 'eliminar-usuario', pathMatch: 'full', component: EliminarUsuarioComponent},
   {
     path: '**',
     redirectTo: ''
