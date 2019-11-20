@@ -35,8 +35,7 @@ import { Padre2Component } from './secciones/comunicacion/ej2/padre2/padre2.comp
 import { Hijo2Component } from './secciones/comunicacion/ej2/hijo2/hijo2.component';
 import { PipesComponent } from './secciones/pipes/pipes.component';
 import { CrearUsuarioComponent } from './apizend/crear-usuario/crear-usuario.component';
-import { EditarUsuarioComponent } from './apizend/editar-usuario/editar-usuario.component';
-import { EliminarUsuarioComponent } from './apizend/eliminar-usuario/eliminar-usuario.component';
+import { GestionarUsuarioComponent } from './apizend/gestionar-usuario/gestionar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -64,8 +63,7 @@ import { EliminarUsuarioComponent } from './apizend/eliminar-usuario/eliminar-us
     Hijo2Component,
     PipesComponent,
     CrearUsuarioComponent,
-    EditarUsuarioComponent,
-    EliminarUsuarioComponent
+    GestionarUsuarioComponent,
   ],
   imports: [
     BrowserModule,

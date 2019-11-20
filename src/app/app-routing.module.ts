@@ -18,8 +18,7 @@ import {Padre2Component} from './secciones/comunicacion/ej2/padre2/padre2.compon
 import {Hijo2Component} from './secciones/comunicacion/ej2/hijo2/hijo2.component';
 import {PipesComponent} from './secciones/pipes/pipes.component';
 import {CrearUsuarioComponent} from "./apizend/crear-usuario/crear-usuario.component";
-import {EditarUsuarioComponent} from "./apizend/editar-usuario/editar-usuario.component";
-import {EliminarUsuarioComponent} from "./apizend/eliminar-usuario/eliminar-usuario.component";
+import {GestionarUsuarioComponent} from "./apizend/gestionar-usuario/gestionar-usuario.component";
 
 const routes: Routes = [
   // EJERCICIOS
@@ -43,8 +42,7 @@ const routes: Routes = [
   {path: 'comments', pathMatch: 'full', component: CommentsComponent},
   // API ZEND
   {path: 'crear-usuario', pathMatch: 'full', component: CrearUsuarioComponent},
-  {path: 'editar-usuario', pathMatch: 'full', component: EditarUsuarioComponent},
-  {path: 'eliminar-usuario', pathMatch: 'full', component: EliminarUsuarioComponent},
+  {path: 'gestionar-usuario', pathMatch: 'full', component: GestionarUsuarioComponent},
   {
     path: '**',
     redirectTo: ''
