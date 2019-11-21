@@ -24,7 +24,7 @@ export class AuthService {
     this.http.get('https://jsonplaceholder.typicode.com/users/' + username, AuthService.crearHeaders()).subscribe(
       () => {
         this.estadoLogin = true;
-        sessionStorage.setItem(this.sesionLogin, username);
+        sessionStorage.setItem(this.sesionLogin, btoa(username));
         this.logueado.emit(this.estadoLogin);
       },
       () => {
@@ -45,6 +45,6 @@ export class AuthService {
   }
 
   getUser() {
-    return sessionStorage.getItem(this.sesionLogin);
+    return atob(sessionStorage.getItem(this.sesionLogin));
   }
 }
