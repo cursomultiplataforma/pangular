@@ -39,6 +39,7 @@ import { AuthComponent } from './apicloud/auth/auth.component';
 import { ModalpostComponent } from './apicloud/templates/modalpost/modalpost.component';
 import { MiperfilComponent } from './apicloud/miperfil/miperfil.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatGridListModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatBadgeModule
   ],
   entryComponents: [
     CustomSnackBarComponent,
