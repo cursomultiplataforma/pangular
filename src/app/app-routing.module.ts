@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {OneComponent} from './secciones/one/one.component';
-import {TwoComponent} from './secciones/two/two.component';
-import {DirectivaifComponent} from './secciones/directivaif/directivaif.component';
-import {DirectivaforComponent} from './secciones/directivafor/directivafor.component';
-import {DirectivaswitchComponent} from './secciones/directivaswitch/directivaswitch.component';
-import {DirectivamodelComponent} from './secciones/directivamodel/directivamodel.component';
+import {OneComponent} from './secciones/cargarcomponentes/one/one.component';
+import {TwoComponent} from './secciones/cargarcomponentes/two/two.component';
+import {DirectivaifComponent} from './secciones/directivas/directivaif/directivaif.component';
+import {DirectivaforComponent} from './secciones/directivas/directivafor/directivafor.component';
+import {DirectivaswitchComponent} from './secciones/directivas/directivaswitch/directivaswitch.component';
+import {DirectivamodelComponent} from './secciones/directivas/directivamodel/directivamodel.component';
 import {PadreComponent} from './secciones/comunicacion/padre/padre.component';
 import {HijoComponent} from './secciones/comunicacion/hijo/hijo.component';
 import {ObserverComponent} from './secciones/observer/observer.component';
