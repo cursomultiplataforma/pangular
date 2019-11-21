@@ -31,6 +31,8 @@ export class PostsComponent implements OnInit, AfterViewInit {
   // custom snack bar
   mensajeSnackBar: string;
   @ViewChild('snackBarTemplate', {static: true}) snackBarTemplate: TemplateRef<any>;
+  // expansion panel
+  panelOpenState = false;
 
   constructor(
     private apiCloud: ApicloudService,
@@ -92,6 +94,48 @@ export class PostsComponent implements OnInit, AfterViewInit {
       },
       () => {
         console.log('error al obtener los comentarios');
+      }
+    );
+  }
+
+  cargarTodosLosPost() {
+    this.apiCloud.getAllPost().subscribe(
+      resp => {
+        // @ts-ignore
+        this.dataSource = new MatTableDataSource<Post[]>(resp.body);
+        // @ts-ignore
+        this.resultsLength = resp.body.length;
+        this.dataSource.paginator = this.paginator;
+        this.mensajeSnackBar = 'Datos cargados correctamente';
+        this.snackBar.openFromTemplate(this.snackBarTemplate, {
+          duration: 2000
+        });
+      },
+      err => {
+        this.snackBar.open('Error al cargar los datos: ' + err, 'Error', {
+          duration: 2000
+        });
+      }
+    );
+  }
+
+  cargarMisPost() {
+    this.apiCloud.getAllPostByUser(this.authService.getUser()).subscribe(
+      resp => {
+        // @ts-ignore
+        this.dataSource = new MatTableDataSource<Post[]>(resp.body);
+        // @ts-ignore
+        this.resultsLength = resp.body.length;
+        this.dataSource.paginator = this.paginator;
+        this.mensajeSnackBar = 'Datos cargados correctamente';
+        this.snackBar.openFromTemplate(this.snackBarTemplate, {
+          duration: 2000
+        });
+      },
+      err => {
+        this.snackBar.open('Error al cargar los datos: ' + err, 'Error', {
+          duration: 2000
+        });
       }
     );
   }

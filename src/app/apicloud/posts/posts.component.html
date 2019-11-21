@@ -3,6 +3,21 @@
   <mat-icon matBadge="{{resultsLength}}" matBadgeColor="warn">format_list_numbered</mat-icon>
 </p>
 
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [ngStyle]="{backgroundColor: '#fdfdd6'}">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Mostrar opciones de filtro
+      </mat-panel-title>
+      <mat-panel-description>
+        El panel está ahora {{panelOpenState ? 'abierto' : 'cerrado'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <button mat-raised-button (click)="cargarTodosLosPost()" color="primary">Cargar todos los post</button>
+    <button mat-raised-button (click)="cargarMisPost()" color="accent">Cargar mis post</button>
+  </mat-expansion-panel>
+</mat-accordion>
+
 <mat-toolbar color="warn">
   <form class="example-form">
     <mat-form-field class="example-full-width">
@@ -51,10 +66,8 @@
   </table>
     <!--<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
-
   <mat-paginator [length]="resultsLength" [pageSize]="10"></mat-paginator>
 </div>
-
 
 <ng-template #snackBarTemplate>
   <app-custom-snack-bar [texto]="mensajeSnackBar"></app-custom-snack-bar>

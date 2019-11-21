@@ -31,15 +31,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {CustomSnackBarComponent} from './apicloud/templates/snackbarok/custom.snabkbar.ok.component';
-import { Padre2Component } from './secciones/comunicacion/ej2/padre2/padre2.component';
-import { Hijo2Component } from './secciones/comunicacion/ej2/hijo2/hijo2.component';
-import { PipesComponent } from './secciones/pipes/pipes.component';
+import {Padre2Component} from './secciones/comunicacion/ej2/padre2/padre2.component';
+import {Hijo2Component} from './secciones/comunicacion/ej2/hijo2/hijo2.component';
+import {PipesComponent} from './secciones/pipes/pipes.component';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { AuthComponent } from './apicloud/auth/auth.component';
-import { ModalpostComponent } from './apicloud/templates/modalpost/modalpost.component';
-import { MiperfilComponent } from './apicloud/miperfil/miperfil.component';
+import {AuthComponent} from './apicloud/auth/auth.component';
+import {ModalpostComponent} from './apicloud/templates/modalpost/modalpost.component';
+import {MiperfilComponent} from './apicloud/miperfil/miperfil.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatGridListModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatExpansionModule
   ],
   entryComponents: [
     CustomSnackBarComponent,
