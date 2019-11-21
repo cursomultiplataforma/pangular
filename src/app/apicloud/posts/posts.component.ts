@@ -5,6 +5,10 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {AuthService} from '../services/auth.service';
+import {ModalpostComponent} from '../templates/modalpost/modalpost.component';
+import {MatDialog} from '@angular/material/dialog';
+import {IDatosDialogo} from '../models/idialogdata';
 
 @Component({
   selector: 'app-posts',
@@ -30,13 +34,18 @@ export class PostsComponent implements OnInit, AfterViewInit {
 
   constructor(
     private apiCloud: ApicloudService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private authService: AuthService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void { }
 
   ngAfterViewInit() {
-    this.apiCloud.getAllPost().subscribe(
+    (this.authService.estaLogueado()
+        ? this.apiCloud.getAllPostByUser(this.authService.getUser())
+        : this.apiCloud.getAllPost()
+    ).subscribe(
       resp => {
         // @ts-ignore
         this.dataSource = new MatTableDataSource<Post[]>(resp.body);
@@ -62,5 +71,28 @@ export class PostsComponent implements OnInit, AfterViewInit {
       // tslint:disable-next-line:triple-equals
       return data.title == filter;
     };*/
+  }
+
+  openDialog(postId): void {
+    console.log(postId);
+    this.apiCloud.getAllPostById(postId).subscribe(
+      (data) => {
+        // @ts-ignore
+        const datosComentarios = data.body;
+        const dialogRef = this.dialog.open(ModalpostComponent, {
+          height: '500px',
+          width: '1200px',
+          data: { datos: new IDatosDialogo('Comentarios del post ', postId, datosComentarios)}
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+          console.log(result);
+        });
+      },
+      () => {
+        console.log('error al obtener los comentarios');
+      }
+    );
   }
 }

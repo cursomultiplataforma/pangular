@@ -24,7 +24,7 @@
     <hr>
     <ul>
       <li><a routerLink='posts' (click)="sidenav.close()">Posts</a></li>
-      <li><a routerLink='comments' (click)="sidenav.close()">Comentarios</a></li>
+      <!--<li><a routerLink='comments' (click)="sidenav.close()">Comentarios</a></li>-->
     </ul>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -35,6 +35,7 @@
       Curso multiplataforma
       <span class="toolbar-spacer"></span>
       <span *ngIf="!logueado"><button mat-button routerLink='login' (click)="sidenav.close()">Login</button></span>
+      <span *ngIf="logueado"><button mat-button (click)="miperfil()">Perfil</button></span>
       <span *ngIf="logueado"><button mat-button (click)="desconectar()">Desconectar</button></span>
     </mat-toolbar>
     <div class="main-content">

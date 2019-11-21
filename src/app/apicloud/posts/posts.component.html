@@ -28,7 +28,8 @@
             <div class="example-element-title"> {{element.body}} </div>
           </div>-->
           <div class="example-element-description">
-            <b>Body:</b> {{element.body}}
+            <p><b>Body:</b> {{element.body}}</p>
+            <p><button mat-raised-button (click)="openDialog(element.id)" color="warn">Ver comentarios</button></p>
             <!--<span class="example-element-description-attribution"> -- Wikipedia </span>-->
           </div>
         </div>

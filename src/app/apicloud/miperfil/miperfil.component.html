@@ -1,0 +1,22 @@
+<mat-card class="example-card" *ngIf="ok">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{user.name}}</mat-card-title>
+    <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="{{user.website}}">
+  <mat-card-content>
+    <p>Ciudad: {{user.address.city}}</p>
+    <p>Geo: {{user.address.zipcode}}</p>
+  </mat-card-content>
+  <!--<mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>-->
+</mat-card>
+
+<div *ngIf="!ok">
+  <div class="alert alert-info">
+    Cargando datos ...
+  </div>
+</div>

@@ -25,4 +25,16 @@ export class ApicloudService {
   getAllComments() {
     return this.http.get<Comment>('https://jsonplaceholder.typicode.com/comments', ApicloudService.crearHeaders());
   }
+
+  getAllPostByUser(username: string) {
+    return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts?userId=' + username, ApicloudService.crearHeaders());
+  }
+
+  getAllPostById(id: number) {
+    return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/comments?postId=' + id, ApicloudService.crearHeaders());
+  }
+
+  getUser(id: string) {
+    return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/users/' + id, ApicloudService.crearHeaders());
+  }
 }

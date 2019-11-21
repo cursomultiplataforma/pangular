@@ -17,7 +17,13 @@ export class LayoutComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private snackBar: MatSnackBar,
     private router: Router
-  ) { }
+  ) {
+    /* this.router.events.subscribe(
+      (e) => {
+        console.log(e);
+      }
+    ); */
+  }
 
   ngOnInit() {
     this.authService.logueado
@@ -37,6 +43,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
           this.snackBar.open('Desconectado correctamente', '', { duration: 2000 });
         }
       );
+    this.logueado = this.authService.estaLogueado();
   }
 
   desconectar() {
@@ -45,5 +52,13 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.authService.logueado.unsubscribe();
+  }
+
+  miperfil() {
+    this.router.navigate(['miperfil'], {
+      queryParams: {
+        id : this.authService.getUser()
+      }
+    });
   }
 }

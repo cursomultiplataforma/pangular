@@ -43,4 +43,8 @@ export class AuthService {
     this.estadoLogin = false;
     this.logueado.emit(this.estadoLogin);
   }
+
+  getUser() {
+    return sessionStorage.getItem(this.sesionLogin);
+  }
 }

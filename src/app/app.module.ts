@@ -36,6 +36,9 @@ import { Hijo2Component } from './secciones/comunicacion/ej2/hijo2/hijo2.compone
 import { PipesComponent } from './secciones/pipes/pipes.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AuthComponent } from './apicloud/auth/auth.component';
+import { ModalpostComponent } from './apicloud/templates/modalpost/modalpost.component';
+import { MiperfilComponent } from './apicloud/miperfil/miperfil.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,9 @@ import { AuthComponent } from './apicloud/auth/auth.component';
     Padre2Component,
     Hijo2Component,
     PipesComponent,
-    AuthComponent
+    AuthComponent,
+    ModalpostComponent,
+    MiperfilComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +79,7 @@ import { AuthComponent } from './apicloud/auth/auth.component';
     MatListModule,
     MatSnackBarModule,
     MatButtonModule,
+    MatDialogModule,
     MatIconModule,
     NoopAnimationsModule,
     FormsModule,
@@ -83,10 +89,12 @@ import { AuthComponent } from './apicloud/auth/auth.component';
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule
   ],
   entryComponents: [
-    CustomSnackBarComponent
+    CustomSnackBarComponent,
+    ModalpostComponent
   ],
   providers: [ApicloudService],
   bootstrap: [AppComponent]

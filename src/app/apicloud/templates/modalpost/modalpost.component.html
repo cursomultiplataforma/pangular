@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>{{datosInput.nameInterface}} {{datosInput.idInterface}}</h1>
+<mat-dialog-content class="mat-typography">
+  <mat-list>
+    <div *ngFor="let c of datosInput.datos.datosInterface">
+      <mat-list-item>{{c.body}}</mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <hr>
+  <!--<button mat-button (click)="onNoClick()">Volver</button>-->
+  <button mat-mini-fab aria-label="Ejemplo con icono en el button" [mat-dialog-close]="'Hasta luego cocodrilo, cerramos el dialogo'">
+    <mat-icon>favorite</mat-icon>
+  </button>
+</mat-dialog-actions>
