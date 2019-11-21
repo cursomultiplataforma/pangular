@@ -3,12 +3,12 @@ import {UsuariosService} from "../services/usuarios.service";
 import {Usuario} from "../Models/usuario.model";
 
 @Component({
-  selector: 'app-crear-usuario',
-  templateUrl: './crear-usuario.component.html',
-  styleUrls: ['./crear-usuario.component.css']
+  selector: 'app-crear-usuario-bbdd',
+  templateUrl: './crear-usuario-bbdd.component.html',
+  styleUrls: ['./crear-usuario-bbdd.component.css']
 })
 
-export class CrearUsuarioComponent implements OnInit {
+export class CrearUsuarioBbddComponent implements OnInit {
 
   private usuario: Usuario;
 
@@ -30,5 +30,6 @@ export class CrearUsuarioComponent implements OnInit {
   cuantos (): void {
     this.usuariosService.cuantos();
   }
+
 
 }

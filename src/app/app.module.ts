@@ -36,6 +36,8 @@ import { Hijo2Component } from './secciones/comunicacion/ej2/hijo2/hijo2.compone
 import { PipesComponent } from './secciones/pipes/pipes.component';
 import { CrearUsuarioComponent } from './apizend/crear-usuario/crear-usuario.component';
 import { GestionarUsuarioComponent } from './apizend/gestionar-usuario/gestionar-usuario.component';
+import { CrearUsuarioBbddComponent } from './apizend/crear-usuario-bbdd/crear-usuario-bbdd.component';
+import { GestionarUsuarioBbddComponent } from './apizend/gestionar-usuario-bbdd/gestionar-usuario-bbdd.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { GestionarUsuarioComponent } from './apizend/gestionar-usuario/gestionar
     PipesComponent,
     CrearUsuarioComponent,
     GestionarUsuarioComponent,
+    CrearUsuarioBbddComponent,
+    GestionarUsuarioBbddComponent,
   ],
   imports: [
     BrowserModule,
