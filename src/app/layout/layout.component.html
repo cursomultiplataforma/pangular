@@ -2,7 +2,7 @@
   <mat-sidenav mode="side" #sidenav position="start">
     EJERCICIOS
     <hr>
-    <ul>
+    <ul *ngIf="verEjercicios">
       <li><a routerLink='' (click)="sidenav.close()">Inicio</a></li>
       <li><a routerLink='one' (click)="sidenav.close()">Ver componente One</a></li>
       <li><a routerLink='two' (click)="sidenav.close()">Ver componente Two</a></li>
@@ -19,6 +19,7 @@
       <li><a routerLink='observer2' (click)="sidenav.close()">Observer2</a></li>
       <li><a routerLink='observer3' (click)="sidenav.close()">Observer3</a></li>
     </ul>
+    <ul *ngIf="!verEjercicios">Ocultos</ul>
     <hr>
     API CLOUD
     <hr>
@@ -29,13 +30,15 @@
     API ZEND
     <hr>
     <ul>
-      <li>Usuarios</li>
-      <ul>
-        <li><a routerLink='crear-usuario'>Crear usuario</a></li>
-        <li><a routerLink='gestionar-usuario'>Gestión usuarios</a></li>
-        <li><a routerLink='crear-usuario'>Crear usuario BBDD</a></li>
-        <li><a routerLink='gestionar-usuario'>Gestión usuarios BBDD</a></li>
-      </ul>
+      <li>
+        Usuarios
+        <ul>
+          <li><a routerLink='crear-usuario'>Crear usuario</a></li>
+          <li><a routerLink='gestionar-usuario'>Gestión usuarios</a></li>
+          <li><a routerLink='crear-usuario'>Crear usuario BBDD</a></li>
+          <li><a routerLink='gestionar-usuario'>Gestión usuarios BBDD</a></li>
+        </ul>
+      </li>
     </ul>
   </mat-sidenav>
   <mat-sidenav-content>

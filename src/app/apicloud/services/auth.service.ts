@@ -8,7 +8,9 @@ export class AuthService {
 
   private estadoLogin = false;
   @Output() logueado: EventEmitter<boolean> = new EventEmitter();
+  @Output() verEjerciciosEmitter: EventEmitter<boolean> = new EventEmitter();
   private sesionLogin = 'usuarioEnSesion';
+  private sesionVerEjercicios = 'verEjerciciosEnSesion';
 
   constructor(private http: HttpClient) { }
 
@@ -46,5 +48,14 @@ export class AuthService {
 
   getUser() {
     return atob(sessionStorage.getItem(this.sesionLogin));
+  }
+
+  setVerEjercicios(estado) {
+    sessionStorage.setItem(this.sesionVerEjercicios, estado);
+    this.verEjerciciosEmitter.emit(estado === 'SI');
+  }
+
+  verEjercicios() {
+    return sessionStorage.getItem(this.sesionVerEjercicios) === 'SI';
   }
 }

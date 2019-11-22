@@ -12,6 +12,7 @@ import {Router} from '@angular/router';
 export class LayoutComponent implements OnInit, OnDestroy {
 
   logueado = true;
+  verEjercicios: boolean;
 
   constructor(
     private authService: AuthService,
@@ -27,9 +28,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.authService.logueado
-      .pipe(
-        delay(0),
-      )
+      .pipe(delay(0))
       .subscribe(
         status => {
           this.logueado = status;
@@ -43,7 +42,16 @@ export class LayoutComponent implements OnInit, OnDestroy {
           this.snackBar.open('Desconectado correctamente', '', { duration: 2000 });
         }
       );
+    this.authService.verEjerciciosEmitter.pipe(delay(0)).subscribe(
+      (estado) => {
+        this.verEjercicios = estado;
+      },
+      () => {
+        console.log('error al mostrar el menú de ejercicios.');
+      }
+    );
     this.logueado = this.authService.estaLogueado();
+    this.verEjercicios = this.authService.verEjercicios();
   }
 
   desconectar() {
