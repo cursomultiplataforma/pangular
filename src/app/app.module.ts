@@ -45,6 +45,8 @@ import { CrearUsuarioComponent } from './apizend/crear-usuario/crear-usuario.com
 import { GestionarUsuarioComponent } from './apizend/gestionar-usuario/gestionar-usuario.component';
 import { CrearUsuarioBbddComponent } from './apizend/crear-usuario-bbdd/crear-usuario-bbdd.component';
 import { GestionarUsuarioBbddComponent } from './apizend/gestionar-usuario-bbdd/gestionar-usuario-bbdd.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -102,7 +104,9 @@ import { GestionarUsuarioBbddComponent } from './apizend/gestionar-usuario-bbdd/
     ReactiveFormsModule,
     MatCardModule,
     MatBadgeModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSlideToggleModule,
+    MatRadioModule
   ],
   entryComponents: [
     CustomSnackBarComponent,

@@ -24,7 +24,7 @@ export class AuthComponent implements OnInit, OnDestroy {
       username: new FormControl('',
         [Validators.required]),
       password: new FormControl('',
-        [Validators.required])
+        [Validators.required, Validators.minLength(2)])
     });
     this.authService.logueado
       .pipe(

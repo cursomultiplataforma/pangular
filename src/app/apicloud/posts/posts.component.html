@@ -1,10 +1,22 @@
-<p>
-  Total de solicitudes
-  <mat-icon matBadge="{{resultsLength}}" matBadgeColor="warn">format_list_numbered</mat-icon>
-</p>
-
+<div class="row">
+  <div class="col-md-2">
+    Total de solicitudes
+    <mat-icon matBadge="{{resultsLength}}" matBadgeColor="warn">format_list_numbered</mat-icon>
+  </div>
+  <div class="col-md-3 offset-7">
+    <section class="example-section">
+      <label class="example-margin"><b>Color:</b></label>
+      <mat-radio-group [(ngModel)]="color">
+        <mat-radio-button class="example-margin" value="primary">Primary</mat-radio-button>
+        <mat-radio-button class="example-margin" value="accent">Accent</mat-radio-button>
+        <mat-radio-button class="example-margin" value="warn">Warn</mat-radio-button>
+      </mat-radio-group>
+    </section>
+  </div>
+</div>
+<hr>
 <mat-accordion>
-  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [ngStyle]="{backgroundColor: '#fdfdd6'}">
+  <mat-expansion-panel (opened)="panelOpenState=true" (closed)="panelOpenState = false" [ngStyle]="{backgroundColor: '#fdfdd6'}">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Mostrar opciones de filtro
@@ -13,12 +25,18 @@
         El panel está ahora {{panelOpenState ? 'abierto' : 'cerrado'}}
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <button mat-raised-button (click)="cargarTodosLosPost()" color="primary">Cargar todos los post</button>
-    <button mat-raised-button (click)="cargarMisPost()" color="accent">Cargar mis post</button>
+    <div class="row">
+      <div class="col-md-2">
+        <button mat-raised-button (click)="cargarTodosLosPost()" color="primary">Cargar todos los post</button>
+      </div>
+      <div class="col-md-2">
+        <button mat-raised-button (click)="cargarMisPost()" color="accent">Cargar mis post</button>
+      </div>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>
-
-<mat-toolbar color="warn">
+<hr>
+<mat-toolbar [color]="color">
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <label>

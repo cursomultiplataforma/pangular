@@ -33,6 +33,7 @@ export class PostsComponent implements OnInit, AfterViewInit {
   @ViewChild('snackBarTemplate', {static: true}) snackBarTemplate: TemplateRef<any>;
   // expansion panel
   panelOpenState = false;
+  color = 'warn';
 
   constructor(
     private apiCloud: ApicloudService,
