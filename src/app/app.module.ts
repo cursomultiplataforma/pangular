@@ -41,6 +41,10 @@ import {MiperfilComponent} from './apicloud/miperfil/miperfil.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { CrearUsuarioComponent } from './apizend/crear-usuario/crear-usuario.component';
+import { GestionarUsuarioComponent } from './apizend/gestionar-usuario/gestionar-usuario.component';
+import { CrearUsuarioBbddComponent } from './apizend/crear-usuario-bbdd/crear-usuario-bbdd.component';
+import { GestionarUsuarioBbddComponent } from './apizend/gestionar-usuario-bbdd/gestionar-usuario-bbdd.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +73,11 @@ import {MatExpansionModule} from '@angular/material/expansion';
     PipesComponent,
     AuthComponent,
     ModalpostComponent,
-    MiperfilComponent
+    MiperfilComponent,
+    CrearUsuarioComponent,
+    GestionarUsuarioComponent,
+    CrearUsuarioBbddComponent,
+    GestionarUsuarioBbddComponent,
   ],
   imports: [
     BrowserModule,
