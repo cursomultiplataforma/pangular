@@ -40,7 +40,10 @@
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <label>
-        <input matInput [ngStyle]="{fontSize:'12px'}" placeholder="Filtrar por titulo" value="" (keyup)="filterTitle($event.target.value)">
+        <input matTooltip="Escriba para filtrar los datos cargados en la tabla"
+               matInput [ngStyle]="{fontSize:'12px'}"
+               placeholder="Filtrar por titulo"
+               value="" (keyup)="filterTitle($event.target.value)">
       </label>
     </mat-form-field>
   </form>

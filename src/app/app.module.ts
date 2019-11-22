@@ -48,6 +48,7 @@ import { GestionarUsuarioBbddComponent } from './apizend/gestionar-usuario-bbdd/
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatRadioModule, } from '@angular/material/radio';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -108,7 +109,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatExpansionModule,
     MatSlideToggleModule,
     MatRadioModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTooltipModule
   ],
   entryComponents: [
     CustomSnackBarComponent,
