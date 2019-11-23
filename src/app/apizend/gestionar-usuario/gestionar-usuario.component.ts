@@ -14,7 +14,7 @@ export class GestionarUsuarioComponent implements OnInit {
   private usuarios$: Observable<Usuario[]>;
   private usuariosSuscripcion: Subscription;
 
-  constructor(private usuariosService: UsuariosService) { }
+  constructor(private usuariosService: UsuariosService,) { }
 
   ngOnInit() {
     /*

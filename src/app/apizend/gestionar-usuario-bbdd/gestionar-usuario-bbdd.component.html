@@ -1,9 +1,26 @@
 <h2>
   Listado Usuarios
 </h2>
-<div *ngIf="! usuarios.length">No hay usuarios por el momento</div>
-<div>
-  <article *ngFor="let usuario of usuarios">
-    <span>{{usuario.nombre}} {{usuario.apellido1}} {{usuario.apellido2}} ({{usuario.login}}), {{usuario.edad}} años</span><p><button (click)="this.borrar()">Borrar</button></p>
-  </article>
-</div>
+Número de usuarios: {{cuantos}}<br>
+Carg22a: {{mensaje}}
+<br><br>
+
+<article *ngFor="let colums of columnsToDisplay">
+  <span>{{colums}}</span>
+</article>
+
+<pre>{{ usuarios }}</pre>
+
+
+
+<table mat-table [dataSource]="usuarios" multiTemplateDataRows>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay">-</tr>
+
+  <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+  </ng-container>
+  <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+      class="example-element-row">
+  </tr>
+</table>

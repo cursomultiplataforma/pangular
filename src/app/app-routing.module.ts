@@ -21,6 +21,7 @@ import {CrearUsuarioComponent} from "./apizend/crear-usuario/crear-usuario.compo
 import {GestionarUsuarioComponent} from "./apizend/gestionar-usuario/gestionar-usuario.component";
 import {CrearUsuarioBbddComponent} from "./apizend/crear-usuario-bbdd/crear-usuario-bbdd.component";
 import {GestionarUsuarioBbddComponent} from "./apizend/gestionar-usuario-bbdd/gestionar-usuario-bbdd.component";
+import {UsuarioDosComponent} from "./apizend/usuario-dos/usuario-dos.component";
 
 const routes: Routes = [
   // EJERCICIOS
@@ -47,6 +48,7 @@ const routes: Routes = [
   {path: 'gestionar-usuario', pathMatch: 'full', component: GestionarUsuarioComponent},
   {path: 'crear-usuario-bbdd', pathMatch: 'full', component: CrearUsuarioBbddComponent},
   {path: 'gestionar-usuario-bbdd', pathMatch: 'full', component: GestionarUsuarioBbddComponent},
+  {path: 'usuario-dos', pathMatch: 'full', component: UsuarioDosComponent},
   {
     path: '**',
     redirectTo: ''

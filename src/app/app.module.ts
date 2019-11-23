@@ -38,6 +38,10 @@ import { CrearUsuarioComponent } from './apizend/crear-usuario/crear-usuario.com
 import { GestionarUsuarioComponent } from './apizend/gestionar-usuario/gestionar-usuario.component';
 import { CrearUsuarioBbddComponent } from './apizend/crear-usuario-bbdd/crear-usuario-bbdd.component';
 import { GestionarUsuarioBbddComponent } from './apizend/gestionar-usuario-bbdd/gestionar-usuario-bbdd.component';
+import { UsuarioDosComponent } from './apizend/usuario-dos/usuario-dos.component';
+import {UsuariosService} from "./apizend/services/usuarios.service";
+import {UsuarioBbddService} from "./apizend/services/usuario-bbdd.service";
+import {UsuariosDosService} from "./apizend/services/usuario-dos.service";
 
 @NgModule({
   declarations: [
@@ -64,10 +68,12 @@ import { GestionarUsuarioBbddComponent } from './apizend/gestionar-usuario-bbdd/
     Padre2Component,
     Hijo2Component,
     PipesComponent,
+    // API ZEND
     CrearUsuarioComponent,
     GestionarUsuarioComponent,
     CrearUsuarioBbddComponent,
     GestionarUsuarioBbddComponent,
+    UsuarioDosComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +97,7 @@ import { GestionarUsuarioBbddComponent } from './apizend/gestionar-usuario-bbdd/
   entryComponents: [
     CustomSnackBarComponent
   ],
-  providers: [ApicloudService],
+  providers: [ApicloudService, UsuariosService, UsuarioBbddService, UsuariosDosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

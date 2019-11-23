@@ -1,0 +1,11 @@
+<h2>
+  Usuarios DOSSSS
+</h2>
+{{mensaje}}<br>
+
+<div *ngIf="! cuantos">No hay usuarios por el momento</div>
+<div>
+  <article *ngFor="let usuario of usuarios">
+    <span>{{usuario.NOMBRE}} {{usuario.APELLIDO1}} {{usuario.APELLIDO2}} ({{usuario.LOGIN}}), {{usuario.EDAD}} años. <button (click)="this.borrar()">Borrar</button></span>
+  </article>
+</div>

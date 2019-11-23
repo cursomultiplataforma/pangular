@@ -21,7 +21,8 @@ export class ApicloudService {
   }
 
   getAllPost() {
-    return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts', ApicloudService.crearHeaders());
+    //return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts', ApicloudService.crearHeaders());
+    return this.http.get<Post[]>('http://localhost/pzend/public/usuario', ApicloudService.crearHeaders());
   }
 
   getAllComments() {
