@@ -13,6 +13,10 @@ export class UsuarioDosComponent implements OnInit {
   public mensaje;
   public cuantos;
 
+  borrar(login): void {
+    alert(login);
+  }
+
   constructor(private usuarioDos: UsuariosDosService) {
     this.usuarioDos.getUsuarios().subscribe(
       resp => {

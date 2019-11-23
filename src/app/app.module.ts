@@ -34,14 +34,10 @@ import {CustomSnackBarComponent} from './apicloud/templates/snackbarok/custom.sn
 import { Padre2Component } from './secciones/comunicacion/ej2/padre2/padre2.component';
 import { Hijo2Component } from './secciones/comunicacion/ej2/hijo2/hijo2.component';
 import { PipesComponent } from './secciones/pipes/pipes.component';
-import { CrearUsuarioComponent } from './apizend/crear-usuario/crear-usuario.component';
+// API Zend
 import { GestionarUsuarioComponent } from './apizend/gestionar-usuario/gestionar-usuario.component';
-import { CrearUsuarioBbddComponent } from './apizend/crear-usuario-bbdd/crear-usuario-bbdd.component';
-import { GestionarUsuarioBbddComponent } from './apizend/gestionar-usuario-bbdd/gestionar-usuario-bbdd.component';
 import { UsuarioDosComponent } from './apizend/usuario-dos/usuario-dos.component';
 import {UsuariosService} from "./apizend/services/usuarios.service";
-import {UsuarioBbddService} from "./apizend/services/usuario-bbdd.service";
-import {UsuariosDosService} from "./apizend/services/usuario-dos.service";
 
 @NgModule({
   declarations: [
@@ -69,10 +65,7 @@ import {UsuariosDosService} from "./apizend/services/usuario-dos.service";
     Hijo2Component,
     PipesComponent,
     // API ZEND
-    CrearUsuarioComponent,
     GestionarUsuarioComponent,
-    CrearUsuarioBbddComponent,
-    GestionarUsuarioBbddComponent,
     UsuarioDosComponent,
   ],
   imports: [
@@ -97,7 +90,7 @@ import {UsuariosDosService} from "./apizend/services/usuario-dos.service";
   entryComponents: [
     CustomSnackBarComponent
   ],
-  providers: [ApicloudService, UsuariosService, UsuarioBbddService, UsuariosDosService],
+  providers: [ApicloudService, UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

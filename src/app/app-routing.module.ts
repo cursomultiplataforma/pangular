@@ -17,10 +17,7 @@ import {CommentsComponent} from './apicloud/comments/comments.component';
 import {Padre2Component} from './secciones/comunicacion/ej2/padre2/padre2.component';
 import {Hijo2Component} from './secciones/comunicacion/ej2/hijo2/hijo2.component';
 import {PipesComponent} from './secciones/pipes/pipes.component';
-import {CrearUsuarioComponent} from "./apizend/crear-usuario/crear-usuario.component";
 import {GestionarUsuarioComponent} from "./apizend/gestionar-usuario/gestionar-usuario.component";
-import {CrearUsuarioBbddComponent} from "./apizend/crear-usuario-bbdd/crear-usuario-bbdd.component";
-import {GestionarUsuarioBbddComponent} from "./apizend/gestionar-usuario-bbdd/gestionar-usuario-bbdd.component";
 import {UsuarioDosComponent} from "./apizend/usuario-dos/usuario-dos.component";
 
 const routes: Routes = [
@@ -44,10 +41,7 @@ const routes: Routes = [
   {path: 'posts', pathMatch: 'full', component: PostsComponent},
   {path: 'comments', pathMatch: 'full', component: CommentsComponent},
   // API ZEND
-  {path: 'crear-usuario', pathMatch: 'full', component: CrearUsuarioComponent},
   {path: 'gestionar-usuario', pathMatch: 'full', component: GestionarUsuarioComponent},
-  {path: 'crear-usuario-bbdd', pathMatch: 'full', component: CrearUsuarioBbddComponent},
-  {path: 'gestionar-usuario-bbdd', pathMatch: 'full', component: GestionarUsuarioBbddComponent},
   {path: 'usuario-dos', pathMatch: 'full', component: UsuarioDosComponent},
   {
     path: '**',
