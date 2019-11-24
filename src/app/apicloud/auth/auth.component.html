@@ -1,0 +1,44 @@
+<div class="row" *ngIf="!logueado">
+  <div class="col-md-12">
+    <form (submit)="enviarFormulario(loginForm)" [formGroup]="loginForm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="input-group">
+            <label>
+              Usuario
+              <input class="form-control" type='text' name='username'
+                     formControlName="username" placeholder="Identificador de usuario" required />
+            </label>
+          </div>
+          <div [ngStyle]="{color: 'red'}" *ngIf="mostrarError">Campo obligatorio.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="input-group">
+            <label>
+              Constraseña
+              <input class="form-control" type="password" name='password'
+                     formControlName="password" placeholder="Password" required>
+            </label>
+          </div>
+          <div [ngStyle]="{color: 'red'}" *ngIf="mostrarError">Campo obligatorio.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div *ngIf="logueado">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-success">
+        Usuario logueado.
+      </div>
+    </div>
+  </div>
+</div>

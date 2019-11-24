@@ -1,6 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import {Usuario} from "../Models/usuario.model";
-import {UsuarioApiService} from "../services/usuario-api.service";
+import {Component, OnInit} from '@angular/core';
+import {Usuario} from '../Models/usuario.model';
+import {UsuarioApiService} from '../services/usuario-api.service';
 
 @Component({
   selector: 'app-usuario-api',
@@ -22,11 +22,11 @@ export class UsuarioApiComponent implements OnInit {
         // @ts-ignore
         resp.body.forEach((elem, i) => { this.usuarios.push(elem); });
         // @ts-ignore
-        this.cuantos =resp.body.length;
+        this.cuantos = resp.body.length;
         this.mensaje = 'Datos cargados correctamente';
       },
       err => {
-        this.mensaje = 'Error al cargar los datos';
+        this.mensaje = 'Error al cargar los datos.' + err;
       }
     );
   }
@@ -34,7 +34,7 @@ export class UsuarioApiComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //constructor(private usuarioApi: UsuarioApiService) { }
+  // constructor(private usuarioApi: UsuarioApiService) { }
 /*
   ngOnInit() {
     this.usuarioApi.getUsuarios().subscribe(
@@ -80,7 +80,7 @@ ngAfterViewInit () {
 */
 
   borrar(login): void {
-    this.usuarioApi.borrarUsuario(new Usuario(login, null,null,null,0)).subscribe(
+    this.usuarioApi.borrarUsuario(new Usuario(login, null, null, null, 0)).subscribe(
       resp => {
         this.mensaje = 'Datos eliminados correctamente';
         // Si los vuelvo a pedir me sale actualizado (poco óptimo, otra llamada al API)
@@ -88,10 +88,10 @@ ngAfterViewInit () {
 
         // Más óptimo si actualizamos el array
         // @ts-ignore
-        this.borrarUsuarioArray(new Usuario(resp.body,null,null,null,null));
+        this.borrarUsuarioArray(new Usuario(resp.body, null, null, null, null));
       },
       err => {
-        this.mensaje = 'Error al eliminar los datos';
+        this.mensaje = 'Error al eliminar los datos.' + err;
       }
     );
 
@@ -101,13 +101,13 @@ ngAfterViewInit () {
 
     this.usuarios.forEach((item, index, dat) => {
       if (item.login === login) {
-        //this.usuario = item;
+        // this.usuario = item;
         this.usuario = new Usuario(item.login, item.nombre, item.apellido1, item.apellido2, item.edad);
       }
     });
   }
 
-  actualizar(login): void{
+  actualizar(login): void {
     this.usuarioApi.modificarUsuario(this.usuario).subscribe(
       resp => {
         this.mensaje = 'Datos actualizados correctamente';
@@ -116,7 +116,8 @@ ngAfterViewInit () {
 
         // Más óptimo si actualizamos el array
         // @ts-ignore
-        this.modificarUsuarioArray(new Usuario(resp.body.login, resp.body.nombre,resp.body.apellido1,resp.body.apellido2,resp.body.edad))
+        // tslint:disable-next-line:max-line-length
+        this.modificarUsuarioArray(new Usuario(resp.body.login, resp.body.nombre, resp.body.apellido1, resp.body.apellido2, resp.body.edad));
       },
       err => {
         this.mensaje = 'Error al actualizar los datos';
@@ -128,7 +129,7 @@ ngAfterViewInit () {
     this.usuario = this.nuevoUsuarioArray();
   }
 
-  nuevo (accion): void {
+  nuevo(accion): void {
     if (accion == 'grabar') {
       this.usuarioApi.agregarUsuario(this.usuario).subscribe(
         resp => {
@@ -138,10 +139,11 @@ ngAfterViewInit () {
 
           // Más óptimo si actualizamos el array
           // @ts-ignore
-          this.agregarUsuarioArray(new Usuario(resp.body.login, resp.body.nombre,resp.body.apellido1,resp.body.apellido2,resp.body.edad))
+          // tslint:disable-next-line:max-line-length
+          this.agregarUsuarioArray(new Usuario(resp.body.login, resp.body.nombre, resp.body.apellido1, resp.body.apellido2, resp.body.edad));
         },
         err => {
-          this.mensaje = 'Error al insertados los datos';
+          this.mensaje = 'Error al insertados los datos.' + err;
         }
       );
       this.crear = false;
@@ -153,7 +155,7 @@ ngAfterViewInit () {
   }
 
   // Auxiliares gestión del array
-  private modificarUsuarioArray (usuario: Usuario) {
+  private modificarUsuarioArray(usuario: Usuario) {
     this.usuarios.forEach((item, index, dat) => {
       if (item.login === usuario.login) {
         item.nombre = usuario.nombre;
@@ -164,14 +166,14 @@ ngAfterViewInit () {
     });
   }
 
-  private borrarUsuarioArray (usuario: Usuario) {
+  private borrarUsuarioArray(usuario: Usuario) {
     this.usuarios.forEach((item, index, dat) => {
       if (item.login === usuario.login) {
-        this.usuarios.splice(index,1); // Borra desde el index 1 elemento, podrían ser varios
+        this.usuarios.splice(index, 1); // Borra desde el index 1 elemento, podrían ser varios
       }
     });
   }
-  private agregarUsuarioArray (usuario: Usuario) {
+  private agregarUsuarioArray(usuario: Usuario) {
     this.usuarios.push(usuario);
   }
 
@@ -179,7 +181,7 @@ ngAfterViewInit () {
   private nuevoUsuarioArray(): Usuario {
     // Todos null para crearlo sin valores concretos
     // Importante edad = null porque al ser numérco no se puede poner = '' y no queremos inicializaron con un valor
-    return  new Usuario(null,null,null,null,null);
+    return  new Usuario(null, null, null, null, null);
   }
 
 }

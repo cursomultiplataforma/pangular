@@ -2,7 +2,7 @@
   <mat-sidenav mode="side" #sidenav position="start">
     EJERCICIOS
     <hr>
-    <ul>
+    <ul *ngIf="verEjercicios">
       <li><a routerLink='' (click)="sidenav.close()">Inicio</a></li>
       <li><a routerLink='one' (click)="sidenav.close()">Ver componente One</a></li>
       <li><a routerLink='two' (click)="sidenav.close()">Ver componente Two</a></li>
@@ -19,21 +19,24 @@
       <li><a routerLink='observer2' (click)="sidenav.close()">Observer2</a></li>
       <li><a routerLink='observer3' (click)="sidenav.close()">Observer3</a></li>
     </ul>
+    <ul *ngIf="!verEjercicios">Ocultos</ul>
     <hr>
     API CLOUD
     <hr>
     <ul>
       <li><a routerLink='posts' (click)="sidenav.close()">Posts</a></li>
-      <li><a routerLink='comments' (click)="sidenav.close()">Comentarios</a></li>
+      <!--<li><a routerLink='comments' (click)="sidenav.close()">Comentarios</a></li>-->
     </ul>
     API ZEND
     <hr>
     <ul>
-      <li>Usuarios</li>
-      <ul>
-        <li><a routerLink='gestionar-usuario'>Gestión usuarios</a></li>
-        <li><a routerLink='usuario-api'>Gestión usuarios API</a></li>
-      </ul>
+      <li>
+        Usuarios
+        <ul>
+          <li><a routerLink='gestionar-usuario'>Gestión usuarios</a></li>
+          <li><a routerLink='usuario-api'>Gestión usuarios API</a></li>
+        </ul>
+      </li>
     </ul>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -42,6 +45,10 @@
         <mat-icon>menu</mat-icon>
       </button>
       Curso multiplataforma
+      <span class="toolbar-spacer"></span>
+      <span *ngIf="!logueado"><button mat-button routerLink='login' (click)="sidenav.close()">Login</button></span>
+      <span *ngIf="logueado"><button mat-button (click)="miperfil()">Perfil</button></span>
+      <span *ngIf="logueado"><button mat-button (click)="desconectar()">Desconectar</button></span>
     </mat-toolbar>
     <div class="main-content">
       <router-outlet></router-outlet>

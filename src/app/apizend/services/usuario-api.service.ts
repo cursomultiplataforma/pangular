@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Usuario} from "../Models/usuario.model";
+import {Usuario} from '../Models/usuario.model';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 @Injectable({
@@ -33,19 +33,19 @@ export class UsuarioApiService {
   }
 
   public getUsuarios() {
-    return this.http.get<Usuario[]>(this.apiUrl+'usuario', UsuarioApiService.crearHeaders());
+    return this.http.get<Usuario[]>(this.apiUrl + 'usuario', UsuarioApiService.crearHeaders());
   }
 
-  public modificarUsuario (usuario: Usuario) {
-    return this.http.put<Usuario>(this.apiUrl+'usuario'+"/"+usuario.login, usuario, UsuarioApiService.updateHeaders());
+  public modificarUsuario(usuario: Usuario) {
+    return this.http.put<Usuario>(this.apiUrl + 'usuario' + '/' + usuario.login, usuario, UsuarioApiService.crearHeaders());
   }
 
-  public borrarUsuario (usuario: Usuario) {
-    return this.http.delete<Usuario>(this.apiUrl+'usuario'+"/"+usuario.login, UsuarioApiService.updateHeaders());
+  public borrarUsuario(usuario: Usuario) {
+    return this.http.delete<Usuario>(this.apiUrl + 'usuario' + '/' + usuario.login, UsuarioApiService.updateHeaders());
   }
 
-  public agregarUsuario (usuario: Usuario) {
-    return this.http.post<Usuario>(this.apiUrl+'usuario', usuario, UsuarioApiService.updateHeaders());
+  public agregarUsuario(usuario: Usuario) {
+    return this.http.post<Usuario>(this.apiUrl + 'usuario', usuario, UsuarioApiService.updateHeaders());
   }
 
 }

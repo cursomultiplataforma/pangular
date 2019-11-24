@@ -1,8 +1,49 @@
-<mat-toolbar color="warn">
+<div class="row">
+  <div class="col-md-2">
+    Total de solicitudes
+    <mat-icon matBadge="{{resultsLength}}" matBadgeColor="warn">format_list_numbered</mat-icon>
+  </div>
+  <div class="col-md-3 offset-7">
+    <section class="example-section">
+      <label class="example-margin"><b>Color:</b></label>
+      <mat-radio-group [(ngModel)]="color">
+        <mat-radio-button class="example-margin" value="primary">Primary</mat-radio-button>
+        <mat-radio-button class="example-margin" value="accent">Accent</mat-radio-button>
+        <mat-radio-button class="example-margin" value="warn">Warn</mat-radio-button>
+      </mat-radio-group>
+    </section>
+  </div>
+</div>
+<hr>
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState=true" (closed)="panelOpenState = false" [ngStyle]="{backgroundColor: '#fdfdd6'}">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Mostrar opciones de filtro
+      </mat-panel-title>
+      <mat-panel-description>
+        El panel está ahora {{panelOpenState ? 'abierto' : 'cerrado'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="row">
+      <div class="col-md-2">
+        <button mat-raised-button (click)="cargarTodosLosPost()" color="primary">Cargar todos los post</button>
+      </div>
+      <div class="col-md-2">
+        <button mat-raised-button (click)="cargarMisPost()" color="accent">Cargar mis post</button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+<hr>
+<mat-toolbar [color]="color">
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <label>
-        <input matInput [ngStyle]="{fontSize:'12px'}" placeholder="Filtrar por titulo" value="" (keyup)="filterTitle($event.target.value)">
+        <input matTooltip="Escriba para filtrar los datos cargados en la tabla"
+               matInput [ngStyle]="{fontSize:'12px'}"
+               placeholder="Filtrar por titulo"
+               value="" (keyup)="filterTitle($event.target.value)">
       </label>
     </mat-form-field>
   </form>
@@ -28,7 +69,8 @@
             <div class="example-element-title"> {{element.body}} </div>
           </div>-->
           <div class="example-element-description">
-            <b>Body:</b> {{element.body}}
+            <p><b>Body:</b> {{element.body}}</p>
+            <p><button mat-raised-button (click)="openDialog(element.id)" color="warn">Ver comentarios</button></p>
             <!--<span class="example-element-description-attribution"> -- Wikipedia </span>-->
           </div>
         </div>
@@ -45,10 +87,8 @@
   </table>
     <!--<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
-
   <mat-paginator [length]="resultsLength" [pageSize]="10"></mat-paginator>
 </div>
-
 
 <ng-template #snackBarTemplate>
   <app-custom-snack-bar [texto]="mensajeSnackBar"></app-custom-snack-bar>

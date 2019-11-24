@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Usuario} from "../Models/usuario.model";
-import {Observable, Subject} from "rxjs";
+import {Usuario} from '../Models/usuario.model';
+import {Observable, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -54,7 +54,7 @@ export class UsuariosService {
   Recibe un objeto usuario, sólo tiene interes el valor de login (clave), busca a cual corresponde
   esa clave y lo elmina de nuestro array de usuarios
    */
-  borrar (usuario: Usuario) {
+  borrar(usuario: Usuario) {
     this._usuarios.forEach((item, index, dat) => {
       if (item.login === usuario.login) {
         this._usuarios.splice(index,1); // Borra desde el index 1 elemento, podrían ser varios
