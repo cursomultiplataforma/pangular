@@ -36,8 +36,9 @@ import { Hijo2Component } from './secciones/comunicacion/ej2/hijo2/hijo2.compone
 import { PipesComponent } from './secciones/pipes/pipes.component';
 // API Zend
 import { GestionarUsuarioComponent } from './apizend/gestionar-usuario/gestionar-usuario.component';
-import { UsuarioDosComponent } from './apizend/usuario-dos/usuario-dos.component';
+import { UsuarioApiComponent } from './apizend/usuario-api/usuario-api.component';
 import {UsuariosService} from "./apizend/services/usuarios.service";
+import {UsuarioApiService} from "./apizend/services/usuario-api.service";
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import {UsuariosService} from "./apizend/services/usuarios.service";
     PipesComponent,
     // API ZEND
     GestionarUsuarioComponent,
-    UsuarioDosComponent,
+    UsuarioApiComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +91,10 @@ import {UsuariosService} from "./apizend/services/usuarios.service";
   entryComponents: [
     CustomSnackBarComponent
   ],
-  providers: [ApicloudService, UsuariosService],
+  providers: [
+    ApicloudService,
+    // API Zend
+    UsuariosService, UsuarioApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
