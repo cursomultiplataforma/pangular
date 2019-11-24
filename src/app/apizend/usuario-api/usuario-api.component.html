@@ -1,11 +1,13 @@
 <h2>
-  Usuarios
+  Usuarios API
 </h2>
-<div *ngIf="! usuarios.length">No hay usuarios por el momento</div>
+<span class="text-danger">{{mensaje}}</span><br><br>
+
+<div *ngIf="! cuantos">No hay usuarios por el momento</div>
 <div>
   <article *ngFor="let usuario of usuarios">
     <span>
-      {{usuario.nombre}} {{usuario.apellido1}} {{usuario.apellido2}} ({{usuario.login}}), {{usuario.edad}} años
+      {{usuario.nombre}} {{usuario.apellido1}} {{usuario.apellido2}} ({{usuario.login}}), {{usuario.edad}} años.
       <button (click)="this.borrar(usuario.login)">Borrar</button>
       <button (click)="this.editar(usuario.login)">Editar</button>
     </span>

@@ -1,9 +1,0 @@
-<h2>
-  Listado Usuarios
-</h2>
-<div *ngIf="! usuarios.length">No hay usuarios por el momento</div>
-<div>
-  <article *ngFor="let usuario of usuarios">
-    <span>{{usuario.nombre}} {{usuario.apellido1}} {{usuario.apellido2}} ({{usuario.login}}), {{usuario.edad}} años</span><p><button (click)="this.borrar()">Borrar</button></p>
-  </article>
-</div>

@@ -18,10 +18,8 @@ import {Hijo2Component} from './secciones/comunicacion/ej2/hijo2/hijo2.component
 import {PipesComponent} from './secciones/pipes/pipes.component';
 import {AuthComponent} from './apicloud/auth/auth.component';
 import {MiperfilComponent} from './apicloud/miperfil/miperfil.component';
-import {CrearUsuarioComponent} from './apizend/crear-usuario/crear-usuario.component';
 import {GestionarUsuarioComponent} from './apizend/gestionar-usuario/gestionar-usuario.component';
-import {CrearUsuarioBbddComponent} from './apizend/crear-usuario-bbdd/crear-usuario-bbdd.component';
-import {GestionarUsuarioBbddComponent} from './apizend/gestionar-usuario-bbdd/gestionar-usuario-bbdd.component';
+import {UsuarioApiComponent} from './apizend/usuario-api/usuario-api.component';
 
 const routes: Routes = [
   // EJERCICIOS
@@ -46,10 +44,8 @@ const routes: Routes = [
   // {path: 'comments', pathMatch: 'full', component: CommentsComponent},
   {path: 'posts', pathMatch: 'full', component: PostsComponent},
   // API ZEND
-  {path: 'crear-usuario', pathMatch: 'full', component: CrearUsuarioComponent},
   {path: 'gestionar-usuario', pathMatch: 'full', component: GestionarUsuarioComponent},
-  {path: 'crear-usuario-bbdd', pathMatch: 'full', component: CrearUsuarioBbddComponent},
-  {path: 'gestionar-usuario-bbdd', pathMatch: 'full', component: GestionarUsuarioBbddComponent},
+  {path: 'usuario-api', pathMatch: 'full', component: UsuarioApiComponent},
   {
     path: '**',
     redirectTo: ''

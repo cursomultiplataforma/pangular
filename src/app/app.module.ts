@@ -41,14 +41,14 @@ import {MiperfilComponent} from './apicloud/miperfil/miperfil.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { CrearUsuarioComponent } from './apizend/crear-usuario/crear-usuario.component';
-import { GestionarUsuarioComponent } from './apizend/gestionar-usuario/gestionar-usuario.component';
-import { CrearUsuarioBbddComponent } from './apizend/crear-usuario-bbdd/crear-usuario-bbdd.component';
-import { GestionarUsuarioBbddComponent } from './apizend/gestionar-usuario-bbdd/gestionar-usuario-bbdd.component';
+import {GestionarUsuarioComponent} from './apizend/gestionar-usuario/gestionar-usuario.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatRadioModule, } from '@angular/material/radio';
+import {MatRadioModule} from '@angular/material/radio';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {UsuarioApiComponent} from './apizend/usuario-api/usuario-api.component';
+import {UsuariosService} from './apizend/services/usuarios.service';
+import {UsuarioApiService} from './apizend/services/usuario-api.service';
 
 @NgModule({
   declarations: [
@@ -78,10 +78,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     AuthComponent,
     ModalpostComponent,
     MiperfilComponent,
-    CrearUsuarioComponent,
+    // API ZEND
     GestionarUsuarioComponent,
-    CrearUsuarioBbddComponent,
-    GestionarUsuarioBbddComponent,
+    UsuarioApiComponent
   ],
   imports: [
     BrowserModule,
@@ -116,7 +115,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     CustomSnackBarComponent,
     ModalpostComponent
   ],
-  providers: [ApicloudService],
+  providers: [
+    ApicloudService,
+    // API Zend
+    UsuariosService, UsuarioApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
