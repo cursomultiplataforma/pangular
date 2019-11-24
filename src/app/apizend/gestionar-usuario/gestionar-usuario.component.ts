@@ -10,12 +10,12 @@ import {UsuariosService} from '../services/usuarios.service';
 })
 export class GestionarUsuarioComponent implements OnInit, OnDestroy {
 
-  private usuarios: Usuario[];
-  private usuarios$: Observable<Usuario[]>;
-  private usuariosSuscripcion: Subscription;
-  private edito = false;
-  private crear = false;
-  private usuario: Usuario;
+  public usuarios: Usuario[];
+  public usuarios$: Observable<Usuario[]>;
+  public usuariosSuscripcion: Subscription;
+  public edito = false;
+  public crear = false;
+  public usuario: Usuario;
 
   constructor(private usuariosService: UsuariosService) { }
 
