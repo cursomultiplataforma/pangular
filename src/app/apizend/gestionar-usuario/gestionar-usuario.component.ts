@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Usuario} from '../Models/usuario.model';
 import {Observable, Subscription} from 'rxjs';
 import {UsuariosService} from '../services/usuarios.service';
@@ -8,7 +8,7 @@ import {UsuariosService} from '../services/usuarios.service';
   templateUrl: './gestionar-usuario.component.html',
   styleUrls: ['./gestionar-usuario.component.css']
 })
-export class GestionarUsuarioComponent implements OnInit {
+export class GestionarUsuarioComponent implements OnInit, OnDestroy {
 
   private usuarios: Usuario[];
   private usuarios$: Observable<Usuario[]>;
@@ -17,7 +17,7 @@ export class GestionarUsuarioComponent implements OnInit {
   private crear = false;
   private usuario: Usuario;
 
-  constructor(private usuariosService: UsuariosService,) { }
+  constructor(private usuariosService: UsuariosService) { }
 
   ngOnInit() {
     /*
@@ -32,7 +32,7 @@ export class GestionarUsuarioComponent implements OnInit {
 
   /* Borrar: sólo necesitamos pasar la clave, que será el login */
   borrar(login): void {
-    this.usuario = new Usuario(login, null,null,null,0);
+    this.usuario = new Usuario(login, null, null, null, 0);
     this.usuariosService.borrar(this.usuario);
   }
 
@@ -51,7 +51,7 @@ export class GestionarUsuarioComponent implements OnInit {
         - No permitiría "cambiar de idea"
         - No sería necesasrio "grabar nada", con ocultar la ventana de edición nos valdría
          */
-        //this.usuario = item;
+        // this.usuario = item;
 
         /*
         Otro objeto con los mismos valores
@@ -63,7 +63,7 @@ export class GestionarUsuarioComponent implements OnInit {
     });
   }
 
-  actualizar(login): void{
+  actualizar(login): void {
     this.usuariosService.modificarUsuario(this.usuario);
     // Si es el mismo objeto con edito = false nos vale para que se oculte el div y listo
     this.edito = false;
@@ -73,7 +73,7 @@ export class GestionarUsuarioComponent implements OnInit {
   - Si acción nos dice "grabar" damos la orden de agregar el usuario
   - Si acción nos dice otra cosa, mostrarmos el div de añadir usuarios
    */
-  nuevo (accion): void {
+  nuevo(accion): void {
     if (accion == 'grabar') {
       this.usuariosService.agregaUsuario(this.usuario); // Grabo el usuario
       this.crear = false;

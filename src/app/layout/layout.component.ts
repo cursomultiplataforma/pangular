@@ -59,7 +59,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.authService.logueado.unsubscribe();
+    // this.authService.logueado.unsubscribe();
   }
 
   miperfil() {

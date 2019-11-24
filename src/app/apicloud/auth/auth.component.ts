@@ -58,6 +58,6 @@ export class AuthComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.authService.logueado.unsubscribe();
+    // this.authService.logueado.unsubscribe();
   }
 }

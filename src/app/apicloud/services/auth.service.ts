@@ -28,6 +28,7 @@ export class AuthService {
         this.estadoLogin = true;
         sessionStorage.setItem(this.sesionLogin, btoa(username));
         this.logueado.emit(this.estadoLogin);
+        this.verEjerciciosEmitter.emit(this.estadoLogin);
       },
       () => {
         this.estadoLogin = false;
@@ -42,8 +43,10 @@ export class AuthService {
 
   desconectar() {
     sessionStorage.removeItem(this.sesionLogin);
+    sessionStorage.removeItem(this.sesionVerEjercicios);
     this.estadoLogin = false;
     this.logueado.emit(this.estadoLogin);
+    this.verEjerciciosEmitter.emit(this.estadoLogin);
   }
 
   getUser() {
@@ -56,6 +59,8 @@ export class AuthService {
   }
 
   verEjercicios() {
-    return sessionStorage.getItem(this.sesionVerEjercicios) === 'SI';
+    return sessionStorage.getItem(this.sesionLogin) !== ''
+      && sessionStorage.getItem(this.sesionLogin) !== null
+      && sessionStorage.getItem(this.sesionVerEjercicios) === 'SI';
   }
 }
