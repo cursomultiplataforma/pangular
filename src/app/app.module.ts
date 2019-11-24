@@ -117,6 +117,7 @@ import {UsuarioApiService} from './apizend/services/usuario-api.service';
   ],
   providers: [
     ApicloudService,
+    {provide: Window, useValue: window},
     // API Zend
     UsuariosService, UsuarioApiService],
   bootstrap: [AppComponent]
