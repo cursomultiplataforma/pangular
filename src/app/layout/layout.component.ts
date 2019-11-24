@@ -3,6 +3,7 @@ import {AuthService} from '../apicloud/services/auth.service';
 import {delay} from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Router} from '@angular/router';
+import {WindowToken} from '../window';
 
 @Component({
   selector: 'app-layout',
@@ -19,7 +20,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private snackBar: MatSnackBar,
     private router: Router,
-    @Inject(Window) private window: Window
+    @Inject(WindowToken) private window: Window
   ) {
     /* this.router.events.subscribe(
       (e) => {
@@ -55,6 +56,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     this.logueado = this.authService.estaLogueado();
     this.verEjercicios = this.authService.verEjercicios();
     this.pruebas = this.window.location.hostname === 'localhost';
+    console.log('P:' + this.pruebas);
   }
 
   desconectar() {

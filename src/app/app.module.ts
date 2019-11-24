@@ -51,6 +51,7 @@ import {UsuariosService} from './apizend/services/usuarios.service';
 import {UsuarioApiService} from './apizend/services/usuario-api.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {windowProvider, WindowToken} from './window';
 
 @NgModule({
   declarations: [
@@ -120,7 +121,7 @@ import { environment } from '../environments/environment';
   ],
   providers: [
     ApicloudService,
-    {provide: Window, useValue: window},
+    { provide: WindowToken, useFactory: windowProvider },
     // API Zend
     UsuariosService, UsuarioApiService],
   bootstrap: [AppComponent]
