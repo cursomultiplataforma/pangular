@@ -4,6 +4,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {Comment} from '../models/comment.model';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-comments',
@@ -21,13 +22,17 @@ export class CommentsComponent implements OnInit, AfterViewInit {
 
   constructor(
     private apiCloud: ApicloudService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void { }
 
   ngAfterViewInit() {
-    this.apiCloud.getAllComments().subscribe(
+    (this.authService.estaLogueado()
+      ? this.apiCloud.getAllComments()
+      : this.apiCloud.getAllComments()
+    ).subscribe(
       resp => {
         // @ts-ignore
         this.dataSource = new MatTableDataSource<Comment[]>(resp.body);

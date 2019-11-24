@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {OneComponent} from './secciones/one/one.component';
-import {TwoComponent} from './secciones/two/two.component';
-import {DirectivaifComponent} from './secciones/directivaif/directivaif.component';
-import {DirectivaforComponent} from './secciones/directivafor/directivafor.component';
-import {DirectivaswitchComponent} from './secciones/directivaswitch/directivaswitch.component';
-import {DirectivamodelComponent} from './secciones/directivamodel/directivamodel.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {OneComponent} from './secciones/cargarcomponentes/one/one.component';
+import {TwoComponent} from './secciones/cargarcomponentes/two/two.component';
+import {DirectivaifComponent} from './secciones/directivas/directivaif/directivaif.component';
+import {DirectivaforComponent} from './secciones/directivas/directivafor/directivafor.component';
+import {DirectivaswitchComponent} from './secciones/directivas/directivaswitch/directivaswitch.component';
+import {DirectivamodelComponent} from './secciones/directivas/directivamodel/directivamodel.component';
 import {PadreComponent} from './secciones/comunicacion/padre/padre.component';
 import {HijoComponent} from './secciones/comunicacion/hijo/hijo.component';
 import {ObserverComponent} from './secciones/observer/observer.component';
@@ -13,10 +13,13 @@ import {ErrorComponent} from './secciones/error/error.component';
 import {Ej2Component} from './secciones/observer/ej2/ej2.component';
 import {Ej3Component} from './secciones/observer/ej3/ej3.component';
 import {PostsComponent} from './apicloud/posts/posts.component';
-import {CommentsComponent} from './apicloud/comments/comments.component';
 import {Padre2Component} from './secciones/comunicacion/ej2/padre2/padre2.component';
 import {Hijo2Component} from './secciones/comunicacion/ej2/hijo2/hijo2.component';
 import {PipesComponent} from './secciones/pipes/pipes.component';
+import {AuthComponent} from './apicloud/auth/auth.component';
+import {MiperfilComponent} from './apicloud/miperfil/miperfil.component';
+import {GestionarUsuarioComponent} from './apizend/gestionar-usuario/gestionar-usuario.component';
+import {UsuarioApiComponent} from './apizend/usuario-api/usuario-api.component';
 
 const routes: Routes = [
   // EJERCICIOS
@@ -36,8 +39,13 @@ const routes: Routes = [
   {path: 'observer2', pathMatch: 'full', component: Ej2Component},
   {path: 'observer3', pathMatch: 'full', component: Ej3Component},
   // API CLOUD
+  {path: 'login', pathMatch: 'full', component: AuthComponent},
+  {path: 'miperfil', pathMatch: 'full', component: MiperfilComponent},
+  // {path: 'comments', pathMatch: 'full', component: CommentsComponent},
   {path: 'posts', pathMatch: 'full', component: PostsComponent},
-  {path: 'comments', pathMatch: 'full', component: CommentsComponent},
+  // API ZEND
+  {path: 'gestionar-usuario', pathMatch: 'full', component: GestionarUsuarioComponent},
+  {path: 'usuario-api', pathMatch: 'full', component: UsuarioApiComponent},
   {
     path: '**',
     redirectTo: ''
