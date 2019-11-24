@@ -8,12 +8,12 @@ import {UsuarioApiService} from '../services/usuario-api.service';
   styleUrls: ['./usuario-api.component.css']
 })
 export class UsuarioApiComponent implements OnInit {
-  private usuarios: Usuario[];
-  private mensaje;
-  private cuantos;
-  private edito = false;
-  private crear = false;
-  private usuario: Usuario;
+  public usuarios: Usuario[];
+  public mensaje;
+  public cuantos;
+  public edito = false;
+  public crear = false;
+  public usuario: Usuario;
 
   constructor(private usuarioApi: UsuarioApiService) {
     this.usuarioApi.getUsuarios().subscribe(
