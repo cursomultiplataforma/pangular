@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from '../apicloud/services/auth.service';
 import {delay} from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -13,11 +13,13 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   logueado = true;
   verEjercicios: boolean;
+  pruebas: boolean;
 
   constructor(
     private authService: AuthService,
     private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    @Inject(Window) private window: Window
   ) {
     /* this.router.events.subscribe(
       (e) => {
@@ -52,6 +54,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     );
     this.logueado = this.authService.estaLogueado();
     this.verEjercicios = this.authService.verEjercicios();
+    this.pruebas = this.window.location.hostname === 'localhost';
   }
 
   desconectar() {

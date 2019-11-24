@@ -49,6 +49,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {UsuarioApiComponent} from './apizend/usuario-api/usuario-api.component';
 import {UsuariosService} from './apizend/services/usuarios.service';
 import {UsuarioApiService} from './apizend/services/usuario-api.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -109,7 +111,8 @@ import {UsuarioApiService} from './apizend/services/usuario-api.service';
     MatSlideToggleModule,
     MatRadioModule,
     MatTabsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   entryComponents: [
     CustomSnackBarComponent,
@@ -117,6 +120,7 @@ import {UsuarioApiService} from './apizend/services/usuario-api.service';
   ],
   providers: [
     ApicloudService,
+    {provide: Window, useValue: window},
     // API Zend
     UsuariosService, UsuarioApiService],
   bootstrap: [AppComponent]
