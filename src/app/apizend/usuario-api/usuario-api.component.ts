@@ -91,7 +91,7 @@ ngAfterViewInit () {
         this.borrarUsuarioArray(new Usuario(resp.body, null, null, null, null));
       },
       err => {
-        this.mensaje = 'Error al eliminar los datos.' + err;
+        this.mensaje = 'Error al eliminar los datos.' + err.toString();
       }
     );
 

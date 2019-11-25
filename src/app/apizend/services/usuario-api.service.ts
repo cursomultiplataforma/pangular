@@ -19,18 +19,20 @@ export class UsuarioApiService {
     };
     return options;
   }
-  private static updateHeaders() {
+  /* private static updateHeaders() {
     const options: any = {
       headers: new HttpHeaders({
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': '*'
+        'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers' : 'X-Requested-With, Origin, Content-Type, X-Auth-Token',
+        'Content-Type': 'application/json'
       }),
       params: new HttpParams(),
       responseType: 'json',
       observe: 'response'
     };
     return options;
-  }
+  } */
 
   public getUsuarios() {
     return this.http.get<Usuario[]>(this.apiUrl + 'usuario', UsuarioApiService.crearHeaders());
@@ -41,11 +43,11 @@ export class UsuarioApiService {
   }
 
   public borrarUsuario(usuario: Usuario) {
-    return this.http.delete<Usuario>(this.apiUrl + 'usuario' + '/' + usuario.login, UsuarioApiService.updateHeaders());
+    return this.http.delete<Usuario>(this.apiUrl + 'usuario' + '/' + usuario.login, UsuarioApiService.crearHeaders());
   }
 
   public agregarUsuario(usuario: Usuario) {
-    return this.http.post<Usuario>(this.apiUrl + 'usuario', usuario, UsuarioApiService.updateHeaders());
+    return this.http.post<Usuario>(this.apiUrl + 'usuario', usuario, UsuarioApiService.crearHeaders());
   }
 
 }
