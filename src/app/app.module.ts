@@ -52,6 +52,8 @@ import {UsuarioApiService} from './apizend/services/usuario-api.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {windowProvider, WindowToken} from './window';
+import { ProbandoComponent } from './apizend/probando/probando.component';
+import {ProbandoService} from "./apizend/services/probando.service";
 
 @NgModule({
   declarations: [
@@ -83,7 +85,8 @@ import {windowProvider, WindowToken} from './window';
     MiperfilComponent,
     // API ZEND
     GestionarUsuarioComponent,
-    UsuarioApiComponent
+    UsuarioApiComponent,
+    ProbandoComponent
   ],
   imports: [
     BrowserModule,
@@ -123,7 +126,7 @@ import {windowProvider, WindowToken} from './window';
     ApicloudService,
     { provide: WindowToken, useFactory: windowProvider },
     // API Zend
-    UsuariosService, UsuarioApiService],
+    UsuariosService, UsuarioApiService, ProbandoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
