@@ -14,7 +14,7 @@ export class UsuarioApiComponent implements OnInit {
   public edito = false;
   public crear = false;
   public usuario: Usuario;
-
+/*
   constructor(private usuarioApi: UsuarioApiService) {
     this.usuarioApi.getUsuarios().subscribe(
       resp => {
@@ -33,9 +33,9 @@ export class UsuarioApiComponent implements OnInit {
 
   ngOnInit(): void {
   }
+*/
+ constructor(private usuarioApi: UsuarioApiService) { }
 
-  // constructor(private usuarioApi: UsuarioApiService) { }
-/*
   ngOnInit() {
     this.usuarioApi.getUsuarios().subscribe(
       resp => {
@@ -51,7 +51,7 @@ export class UsuarioApiComponent implements OnInit {
       }
     );
   }
-*/
+
 
 /*
   constructor(private usuarioApi: UsuarioApiService) {
@@ -77,10 +77,12 @@ ngAfterViewInit () {
     }
   );
 }
-*/
+ */
 
   borrar(login): void {
-    this.usuarioApi.borrarUsuario(new Usuario(login, null, null, null, 0)).subscribe(
+    this.usuarioApi.borrarUsuario
+    (new Usuario(login, null, null, null, 0)).
+    subscribe(
       resp => {
         this.mensaje = 'Datos eliminados correctamente';
         // Si los vuelvo a pedir me sale actualizado (poco óptimo, otra llamada al API)
@@ -135,12 +137,12 @@ ngAfterViewInit () {
         resp => {
           this.mensaje = 'Datos insertados correctamente';
           // Si los vuelvo a pedir me sale actualizado (poco óptimo, otra llamada al API)
-          // this.usuarioApi.getUsuarios();
+           this.usuarioApi.getUsuarios();
 
           // Más óptimo si actualizamos el array
           // @ts-ignore
           // tslint:disable-next-line:max-line-length
-          this.agregarUsuarioArray(new Usuario(resp.body.login, resp.body.nombre, resp.body.apellido1, resp.body.apellido2, resp.body.edad));
+          //this.agregarUsuarioArray(new Usuario(resp.body.login, resp.body.nombre, resp.body.apellido1, resp.body.apellido2, resp.body.edad));
         },
         err => {
           this.mensaje = 'Error al insertados los datos.' + err;

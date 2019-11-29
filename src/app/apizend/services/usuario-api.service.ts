@@ -43,7 +43,7 @@ export class UsuarioApiService {
   }
 
   public borrarUsuario(usuario: Usuario) {
-    return this.http.delete<Usuario>(this.apiUrl + 'usuario' + '/' + usuario.login, UsuarioApiService.crearHeaders());
+    return this.http.delete<Usuario> (this.apiUrl + 'usuario' + '/' + usuario.login, UsuarioApiService.crearHeaders());
   }
 
   public agregarUsuario(usuario: Usuario) {

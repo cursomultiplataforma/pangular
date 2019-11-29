@@ -54,6 +54,8 @@ import { environment } from '../environments/environment';
 import {windowProvider, WindowToken} from './window';
 import { ProbandoComponent } from './apizend/probando/probando.component';
 import {ProbandoService} from "./apizend/services/probando.service";
+import { CursoApiComponent } from './apizend/curso-api/curso-api.component';
+import {CursoApiService} from "./apizend/services/curso-api.service";
 
 @NgModule({
   declarations: [
@@ -86,7 +88,8 @@ import {ProbandoService} from "./apizend/services/probando.service";
     // API ZEND
     GestionarUsuarioComponent,
     UsuarioApiComponent,
-    ProbandoComponent
+    ProbandoComponent,
+    CursoApiComponent
   ],
   imports: [
     BrowserModule,
@@ -126,7 +129,7 @@ import {ProbandoService} from "./apizend/services/probando.service";
     ApicloudService,
     { provide: WindowToken, useFactory: windowProvider },
     // API Zend
-    UsuariosService, UsuarioApiService, ProbandoService],
+    UsuariosService, UsuarioApiService, ProbandoService, CursoApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

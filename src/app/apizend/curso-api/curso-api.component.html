@@ -1,0 +1,17 @@
+<p>Listado de curso</p>
+
+<div>
+  <article *ngFor="let curso of cursos">
+    <span>
+      El {{curso.nombre}} se basa en {{curso.descripcion}} y tiene una capadad de {{curso.capacidad}}  asistentes.
+    </span>
+  </article>
+</div>
+<br>
+<div>
+  <p><span>Id: </span><input type="text" [(ngModel)]="curso.id"></p>
+  <p><span>Nombre: </span><input type="text" [(ngModel)]="curso.nombre"></p>
+  <p><span>Descripcion: </span><input type="text" [(ngModel)]="curso.descripcion"></p>
+  <p><span>Capacidad: </span><input type="text" [(ngModel)]="curso.capacidad"></p>
+  <p><button (click)="this.nuevo()">Guardar</button></p>
+</div>

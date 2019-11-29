@@ -21,6 +21,7 @@ import {MiperfilComponent} from './apicloud/miperfil/miperfil.component';
 import {GestionarUsuarioComponent} from './apizend/gestionar-usuario/gestionar-usuario.component';
 import {UsuarioApiComponent} from './apizend/usuario-api/usuario-api.component';
 import {ProbandoComponent} from "./apizend/probando/probando.component";
+import {CursoApiComponent} from "./apizend/curso-api/curso-api.component";
 
 const routes: Routes = [
   // EJERCICIOS
@@ -48,6 +49,7 @@ const routes: Routes = [
   {path: 'gestionar-usuario', pathMatch: 'full', component: GestionarUsuarioComponent},
   {path: 'usuario-api', pathMatch: 'full', component: UsuarioApiComponent},
   {path: 'probando', pathMatch: 'full', component: ProbandoComponent},
+  {path: 'curso-api', pathMatch: 'full', component: CursoApiComponent},
   {
     path: '**',
     redirectTo: ''
